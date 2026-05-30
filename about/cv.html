@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile &amp; CV — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  /* video + intro */
+  .intro{ display:grid; grid-template-columns:1.2fr 1fr; gap:0; border:2px solid var(--ink); margin-top:48px; }
+  @media(max-width:820px){ .intro{ grid-template-columns:1fr; } }
+  .intro .ph{ min-height:420px; border:0; border-right:2px solid var(--ink); border-radius:0; position:relative; }
+  @media(max-width:820px){ .intro .ph{ border-right:0; border-bottom:2px solid var(--ink); min-height:280px; } }
+  .play{
+    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    width:88px; height:88px; border-radius:50%; background:var(--accent); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:32px;
+    box-shadow:0 18px 40px -16px rgba(0,0,0,.5);
+  }
+  .intro .body{ padding:clamp(28px,4vw,52px); }
+  .intro .body h2{ font-family:var(--serif); font-weight:500; font-size:clamp(28px,3.2vw,40px); letter-spacing:-.015em; line-height:1.05; margin:14px 0 16px; }
+  .intro .body p{ font-family:var(--serif); font-size:18px; line-height:1.55; color:var(--ink-2); margin:0 0 1em; max-width:42ch; }
+  .intro .body .meta{ display:flex; gap:18px; flex-wrap:wrap; margin-top:24px; padding-top:18px; border-top:1px solid var(--line); }
+  .intro .body .meta span{ font-family:var(--mono); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); }
+
+  /* CV grid */
+  .cv-section{ display:grid; grid-template-columns:200px 1fr; gap:32px; padding:36px 0; border-top:1px solid var(--line); }
+  @media(max-width:680px){ .cv-section{ grid-template-columns:1fr; gap:14px; } }
+  .cv-section h3{
+    font-family:var(--mono); font-size:11.5px; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--accent); font-weight:500;
+  }
+  .cv-item{ display:grid; grid-template-columns:110px 1fr; gap:24px; padding:14px 0; }
+  .cv-item + .cv-item{ border-top:1px dashed var(--line-2); }
+  @media(max-width:520px){ .cv-item{ grid-template-columns:1fr; gap:4px; } }
+  .cv-item .yr{ font-family:var(--mono); font-size:12.5px; color:var(--ink-3); letter-spacing:.06em; }
+  .cv-item .title{ font-family:var(--serif); font-size:19px; font-weight:500; letter-spacing:-.005em; }
+  .cv-item .where{ font-family:var(--sans); font-size:14.5px; color:var(--ink-2); margin-top:4px; }
+  .cv-item .where em{ font-family:var(--serif); font-style:italic; }
+
+  .download-bar{
+    display:flex; gap:14px; flex-wrap:wrap; align-items:center;
+    padding:18px 22px; border:1px solid var(--line);
+    background:var(--paper-2); border-radius:0; margin-top:36px;
+  }
+  .download-bar .lab{ font-family:var(--mono); font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin-right:auto; }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="About — CV">
+  <div class="wrap">
+    <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a class="is-current" href="index.html">About</a>
+      <a href="../research/index.html">Research</a>
+      <a href="../education-hub/index.html">Education Hub</a>
+      <a href="#">Work With Me</a>
+      <a href="#">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#">Book a conversation</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../Home.html">Home</a><span class="sep">/</span><a href="index.html">About</a><span class="sep">/</span><span>Profile &amp; CV</span></p>
+    <p class="roman">Chapter I · § ii</p>
+    <h1>Profile &amp; <span class="it">CV.</span></h1>
+    <p class="lede">A short video introduction, the formal record of education and appointments, and the full academic instrument — in one place.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+
+    <div class="intro">
+      <div class="ph" data-label="Video introduction — 2:14">
+        <div class="play">▶</div>
+      </div>
+      <div class="body">
+        <span class="eyebrow">Watch the introduction</span>
+        <h2>Two minutes on what I do, and why.</h2>
+        <p>A short, unedited video — recorded at my desk in Adelaide — on what the practice of organisational behaviour actually looks like when it is taken seriously.</p>
+        <p>If you've fifteen minutes after this, the biography essay covers the longer story.</p>
+        <div class="meta">
+          <span>02:14 min</span><span>Recorded May 2026</span><span>Captions available</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="client-banner" style="margin-top:48px;">Records below are scaffold copy — client to supply final CV details before publishing.</p>
+
+    <!-- CV -->
+    <div style="margin-top:24px;">
+
+      <div class="cv-section">
+        <h3>Education</h3>
+        <div>
+          <div class="cv-item">
+            <span class="yr">2018</span>
+            <div>
+              <div class="title">PhD, Organisational Behaviour</div>
+              <div class="where"><em>University placeholder</em>, United Kingdom — supervised by <span class="client-note">Supervisor name TBC</span></div>
+            </div>
+          </div>
+          <div class="cv-item">
+            <span class="yr">2012</span>
+            <div>
+              <div class="title">MSc, Management &amp; Organisations</div>
+              <div class="where"><em>University placeholder</em>, Singapore</div>
+            </div>
+          </div>
+          <div class="cv-item">
+            <span class="yr">2008</span>
+            <div>
+              <div class="title">BBA, with distinction</div>
+              <div class="where"><em>University placeholder</em>, India</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <h3>Academic appointments</h3>
+        <div>
+          <div class="cv-item">
+            <span class="yr">2022 — present</span>
+            <div>
+              <div class="title">Senior Lecturer, Organisational Behaviour</div>
+              <div class="where"><em>University placeholder</em>, Adelaide</div>
+            </div>
+          </div>
+          <div class="cv-item">
+            <span class="yr">2019 — 2022</span>
+            <div>
+              <div class="title">Lecturer, Management</div>
+              <div class="where"><em>University placeholder</em>, Adelaide</div>
+            </div>
+          </div>
+          <div class="cv-item">
+            <span class="yr">2014 — 2018</span>
+            <div>
+              <div class="title">PhD candidate &amp; teaching fellow</div>
+              <div class="where"><em>University placeholder</em>, United Kingdom</div>
+            </div>
+          </div>
+          <div class="cv-item">
+            <span class="yr">2008 — 2014</span>
+            <div>
+              <div class="title">Lecturer, Business &amp; Management</div>
+              <div class="where"><em>University placeholder</em>, Singapore</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <h3>Doctoral supervision</h3>
+        <div>
+          <div class="cv-item">
+            <span class="yr">2024 —</span>
+            <div>
+              <div class="title">PhD candidate · psychosocial safety in healthcare teams</div>
+              <div class="where">Principal supervisor · <span class="client-note">Candidate names TBC</span></div>
+            </div>
+          </div>
+          <div class="cv-item">
+            <span class="yr">2023 —</span>
+            <div>
+              <div class="title">PhD candidate · reflexivity in family firms</div>
+              <div class="where">Co-supervisor</div>
+            </div>
+          </div>
+          <div class="cv-item">
+            <span class="yr">2022 — 2025</span>
+            <div>
+              <div class="title">PhD candidate · leadership identity formation</div>
+              <div class="where">Principal supervisor · completed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <h3>Service &amp; editorial</h3>
+        <div>
+          <div class="cv-item">
+            <span class="yr">2024 —</span>
+            <div>
+              <div class="title">Editorial board member</div>
+              <div class="where"><em>Journal placeholder</em> · <span class="client-note">Journal name TBC</span></div>
+            </div>
+          </div>
+          <div class="cv-item">
+            <span class="yr">2022 —</span>
+            <div>
+              <div class="title">Reviewer · 12+ journals</div>
+              <div class="where">Including <em>Journal of Business Ethics</em>, <em>Academy of Management Journal</em>, <em>Organization Studies</em></div>
+            </div>
+          </div>
+          <div class="cv-item">
+            <span class="yr">2021 —</span>
+            <div>
+              <div class="title">Track chair · AOM Annual Meeting</div>
+              <div class="where">Organisational Behaviour division</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <h3>Teaching</h3>
+        <div>
+          <div class="cv-item">
+            <span class="yr">UG &amp; PG</span>
+            <div>
+              <div class="title">Organisational Behaviour · Leadership · Research Methods</div>
+              <div class="where">Awards listed in full at <a class="link-arrow" href="awards.html" style="font-size:14.5px;">Awards &amp; honours →</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <h3>Languages</h3>
+        <div>
+          <div class="cv-item">
+            <span class="yr">Fluent</span>
+            <div>
+              <div class="title">English · Hindi</div>
+              <div class="where">Working: Punjabi · Conversational: Bahasa</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="download-bar">
+      <span class="lab">Full record</span>
+      <a class="btn btn-ghost" href="#">Download CV (PDF)</a>
+      <a class="btn btn-ghost" href="#">ORCID profile ↗</a>
+      <a class="btn btn-ghost" href="#">Google Scholar ↗</a>
+    </div>
+
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="biography.html">
+    <span class="lab">← Previous section</span>
+    <span class="ttl">i · Biography</span>
+  </a>
+  <a class="next" href="experience.html">
+    <span class="lab">Next section →</span>
+    <span class="ttl">iii · Experience</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="index.html">About</a><a href="../research/index.html">Research</a><a href="../education-hub/index.html">Education Hub</a><a href="#">Work With Me</a><a href="#">Podcast</a></div>
+      <div><h4>More</h4><a href="#">Testimonials</a><a href="#">Student feedback</a><a href="#">Travel &amp; whereabouts</a><a href="#">FAQ</a></div>
+      <div><h4>Connect</h4><a href="#">Contact</a><a href="#">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

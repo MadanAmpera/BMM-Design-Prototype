@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Interviews — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  .iv{
+    display:grid; grid-template-columns:200px 1fr 110px; gap:28px;
+    padding:28px 0; border-top:1px solid var(--line-2); align-items:start;
+    text-decoration:none; color:var(--ink); transition:.15s;
+  }
+  .iv:last-of-type{ border-bottom:1px solid var(--line-2); }
+  .iv:hover{ background:var(--accent-tint); padding-inline:12px; }
+  .iv .ph{ height:120px; border-radius:0; border:1px solid var(--line-2); }
+  .iv .ph::after{ font-size:10px; }
+  .iv .body .show{ font-family:var(--serif); font-style:italic; font-size:17px; color:var(--ink-2); }
+  .iv .body .ttl{ font-family:var(--serif); font-size:22px; font-weight:500; line-height:1.25; letter-spacing:-.01em; margin-top:6px; }
+  .iv .body .with{ font-family:var(--sans); font-size:14px; color:var(--ink-2); margin-top:8px; }
+  .iv .body .topics{ display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+  .iv .body .topics span{ font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); border:1px solid var(--line-2); padding:3px 8px; border-radius:99px; }
+  .iv .when{ font-family:var(--mono); font-size:12px; letter-spacing:.08em; color:var(--ink-3); text-align:right; }
+  .iv .when .dur{ display:block; color:var(--accent); margin-top:6px; font-family:var(--serif); font-size:18px; }
+  @media(max-width:760px){ .iv{ grid-template-columns:1fr; } .iv .when{ text-align:left; } }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="Research — Online interviews">
+  <div class="wrap">
+    <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a href="../about/index.html">About</a>
+      <a class="is-current" href="index.html">Research</a>
+      <a href="../education-hub/index.html">Education Hub</a>
+      <a href="#">Work With Me</a>
+      <a href="#">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#">Book a conversation</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../Home.html">Home</a><span class="sep">/</span><a href="index.html">Research</a><span class="sep">/</span><span>Online interviews</span></p>
+    <p class="roman">Chapter II · § iii</p>
+    <h1>Long-form,<br>on the <span class="it">record.</span></h1>
+    <p class="lede">Podcast guest appearances, video panels, round-tables and academic interviews — the long-form conversations where the research can breathe.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+
+    <p class="client-banner">Appearances below are scaffold copy — client to confirm hosts, episode titles and dates.</p>
+
+    <div class="idx-head" style="margin-top:24px;">
+      <span class="t">All appearances</span>
+      <span class="t" style="color:var(--ink-3);">12 entries</span>
+    </div>
+
+    <a class="iv" href="#">
+      <div class="ph" data-label="Podcast cover"></div>
+      <div class="body">
+        <span class="show">The HBR IdeaCast</span>
+        <div class="ttl">"Why nobody is actually demotivated — and what to do instead."</div>
+        <div class="with">With <span class="client-note">host TBC</span></div>
+        <div class="topics"><span>Psychosocial safety</span><span>Voice</span><span>Leadership</span></div>
+      </div>
+      <div class="when">Apr 2025<span class="dur">38 min</span></div>
+    </a>
+
+    <a class="iv" href="#">
+      <div class="ph" data-label="Video panel"></div>
+      <div class="body">
+        <span class="show">AOM Insights · Video panel</span>
+        <div class="ttl">"Reflexivity is not a personality trait — it is a workplace condition."</div>
+        <div class="with">With <span class="client-note">panel TBC</span></div>
+        <div class="topics"><span>Reflexivity</span><span>Teams</span></div>
+      </div>
+      <div class="when">Feb 2025<span class="dur">52 min</span></div>
+    </a>
+
+    <a class="iv" href="#">
+      <div class="ph" data-label="Podcast cover"></div>
+      <div class="body">
+        <span class="show">The Sociable Scientist</span>
+        <div class="ttl">"From a hostel in Adelaide to FT50 — and the long quiet stretches between."</div>
+        <div class="with">With <span class="client-note">host TBC</span></div>
+        <div class="topics"><span>Career</span><span>Academic life</span></div>
+      </div>
+      <div class="when">Nov 2024<span class="dur">1h 12m</span></div>
+    </a>
+
+    <a class="iv" href="#">
+      <div class="ph" data-label="Webinar"></div>
+      <div class="body">
+        <span class="show">SafeWork SA · Industry webinar</span>
+        <div class="ttl">"What the new psychosocial safety regulations actually require of you."</div>
+        <div class="with">With <span class="client-note">co-presenters TBC</span></div>
+        <div class="topics"><span>Policy</span><span>Practice</span></div>
+      </div>
+      <div class="when">Sep 2024<span class="dur">48 min</span></div>
+    </a>
+
+    <a class="iv" href="#">
+      <div class="ph" data-label="Podcast cover"></div>
+      <div class="body">
+        <span class="show">Talking About Organizations</span>
+        <div class="ttl">"Revisiting Edmondson — what twenty years of psychological safety research has missed."</div>
+        <div class="with">With <span class="client-note">host TBC</span></div>
+        <div class="topics"><span>Psychological safety</span><span>Theory</span></div>
+      </div>
+      <div class="when">Jul 2024<span class="dur">1h 04m</span></div>
+    </a>
+
+    <a class="iv" href="#">
+      <div class="ph" data-label="University seminar"></div>
+      <div class="body">
+        <span class="show">Stanford GSB · Visiting seminar</span>
+        <div class="ttl">"The environment is the intervention — a research programme."</div>
+        <div class="with">With <span class="client-note">moderator TBC</span></div>
+        <div class="topics"><span>Research seminar</span></div>
+      </div>
+      <div class="when">May 2024<span class="dur">1h 18m</span></div>
+    </a>
+
+    <a class="iv" href="#">
+      <div class="ph" data-label="Podcast cover"></div>
+      <div class="body">
+        <span class="show">Eat Sleep Work Repeat</span>
+        <div class="ttl">"Why the manager who 'fixed' the team probably broke something else."</div>
+        <div class="with">With <span class="client-note">host TBC</span></div>
+        <div class="topics"><span>Leadership</span><span>Practice</span></div>
+      </div>
+      <div class="when">Mar 2024<span class="dur">42 min</span></div>
+    </a>
+
+    <a class="iv" href="#">
+      <div class="ph" data-label="Round-table"></div>
+      <div class="body">
+        <span class="show">Times Higher Education · Round-table</span>
+        <div class="ttl">"What postgraduate business education is for — and what it isn't."</div>
+        <div class="with">With <span class="client-note">panel TBC</span></div>
+        <div class="topics"><span>Teaching</span><span>Higher ed</span></div>
+      </div>
+      <div class="when">Nov 2023<span class="dur">56 min</span></div>
+    </a>
+
+    <a class="iv" href="#">
+      <div class="ph" data-label="Podcast cover"></div>
+      <div class="body">
+        <span class="show">The Anxious Achiever</span>
+        <div class="ttl">"How the environment of work shapes who we become at work."</div>
+        <div class="with">With <span class="client-note">host TBC</span></div>
+        <div class="topics"><span>Career</span><span>Identity</span></div>
+      </div>
+      <div class="when">Aug 2023<span class="dur">49 min</span></div>
+    </a>
+
+    <a class="iv" href="#">
+      <div class="ph" data-label="Earlier · 03 entries"></div>
+      <div class="body">
+        <span class="show">Earlier appearances · 2018 — 2022</span>
+        <div class="ttl">Three further podcast guest appearances and panel interviews.</div>
+        <div class="with">Full details in the downloadable CV.</div>
+        <div class="topics"><span>Various</span></div>
+      </div>
+      <div class="when">2018 — 2022</div>
+    </a>
+
+  </div>
+</section>
+
+<section class="section dark-section" style="text-align:center;">
+  <div class="wrap">
+    <span class="eyebrow">Available for new conversations</span>
+    <p class="display" style="max-width:18ch; margin:18px auto 0;">Long-form interviews, on the ideas at the heart of the research.</p>
+    <div style="display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="#" style="border-radius:0;">Invite me to record <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="invitations.html" style="color:var(--ink-on-dark); border-color:var(--line-dark); border-radius:0;">See speaking invitations</a>
+    </div>
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="media.html">
+    <span class="lab">← Previous section</span>
+    <span class="ttl">ii · Media &amp; citations</span>
+  </a>
+  <a class="next" href="invitations.html">
+    <span class="lab">Next section →</span>
+    <span class="ttl">iv · Guest invitations</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="../about/index.html">About</a><a href="index.html">Research</a><a href="../education-hub/index.html">Education Hub</a><a href="#">Work With Me</a><a href="#">Podcast</a></div>
+      <div><h4>More</h4><a href="#">Testimonials</a><a href="#">Student feedback</a><a href="#">Travel &amp; whereabouts</a><a href="#">FAQ</a></div>
+      <div><h4>Connect</h4><a href="#">Contact</a><a href="#">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

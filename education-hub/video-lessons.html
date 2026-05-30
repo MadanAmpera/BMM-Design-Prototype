@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video-led Learning — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  /* Featured / playlist top */
+  .feature{ display:grid; grid-template-columns:1.4fr 1fr; gap:0; border:2px solid var(--ink); margin-top:48px; }
+  @media(max-width:820px){ .feature{ grid-template-columns:1fr; } }
+  .feature .player{ position:relative; min-height:420px; border-right:2px solid var(--ink); background:#1a1814; }
+  @media(max-width:820px){ .feature .player{ border-right:0; border-bottom:2px solid var(--ink); min-height:280px; } }
+  .feature .player .ph{ height:100%; border:0; border-radius:0; background:
+      repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 11px, transparent 11px 22px),
+      #1a1814; color:#7B7264; }
+  .feature .player .ph::after{ background:#221F19; border:1px solid #3A352C; color:#B3A993; }
+  .feature .player .play{
+    position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    width:96px; height:96px; border-radius:50%; background:var(--accent); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:34px;
+    box-shadow:0 18px 40px -16px rgba(0,0,0,.6);
+  }
+  .feature .player .bar{
+    position:absolute; left:24px; right:24px; bottom:24px;
+    height:4px; background:rgba(255,255,255,.18); border-radius:99px;
+  }
+  .feature .player .bar i{ position:absolute; left:0; top:0; bottom:0; width:38%; background:var(--accent); border-radius:99px; }
+  .feature .player .time{ position:absolute; left:24px; bottom:38px; font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:#B3A993; }
+  .feature .info{ padding:clamp(28px,4vw,52px); display:flex; flex-direction:column; justify-content:center; }
+  .feature .info .lvl{ font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--cat-group); }
+  .feature .info h2{ font-family:var(--serif); font-size:clamp(28px,3.6vw,42px); font-weight:500; line-height:1.08; letter-spacing:-.018em; margin:14px 0 16px; }
+  .feature .info h2 em{ color:var(--accent); }
+  .feature .info p{ font-family:var(--serif); font-size:18px; line-height:1.55; color:var(--ink-2); margin:0 0 1em; }
+  .feature .info .meta{ display:flex; flex-wrap:wrap; gap:18px; padding-top:18px; border-top:1px solid var(--line); margin-top:8px; font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); }
+
+  /* Filter rail */
+  .rail{ display:flex; gap:8px; flex-wrap:wrap; margin-top:48px; padding:14px 22px; border:1px solid var(--line); background:var(--paper-2); align-items:center; }
+  .rail .lab{ font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin-right:8px; }
+  .rail a{
+    font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-decoration:none;
+    color:var(--ink-2); border:1px solid var(--line-2); padding:6px 14px; border-radius:99px; transition:.15s;
+  }
+  .rail a.on{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+  .rail a:hover{ border-color:var(--ink); color:var(--ink); }
+  .rail .ct{ margin-left:auto; font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; color:var(--ink-3); }
+
+  /* Lesson grid */
+  .lessons{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:24px; margin-top:32px; }
+  .lesson{ background:var(--paper-2); border:1px solid var(--line); border-radius:0; display:flex; flex-direction:column; transition:.18s; }
+  .lesson:hover{ transform:translateY(-2px); border-color:var(--ink); }
+  .lesson .ph{ height:170px; border:0; border-bottom:1px solid var(--line); border-radius:0; position:relative; }
+  .lesson .ph .badge{
+    position:absolute; left:10px; top:10px;
+    font-family:var(--mono); font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+    background:var(--paper); padding:4px 8px;
+  }
+  .lesson .ph .badge.i{ color:var(--cat-individual); border:1px solid var(--cat-individual); }
+  .lesson .ph .badge.g{ color:var(--cat-group); border:1px solid var(--cat-group); }
+  .lesson .ph .badge.o{ color:var(--cat-org); border:1px solid var(--cat-org); }
+  .lesson .ph .dur{
+    position:absolute; right:10px; bottom:10px;
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.08em;
+    background:var(--ink); color:var(--paper); padding:4px 8px;
+  }
+  .lesson .body{ padding:20px 20px 22px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .lesson .body .theory{ font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); }
+  .lesson .body h4{ font-family:var(--serif); font-size:19px; font-weight:500; line-height:1.25; letter-spacing:-.005em; margin:0; }
+  .lesson .body .meta{ margin-top:auto; padding-top:14px; border-top:1px dashed var(--line-2); font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; color:var(--ink-3); display:flex; justify-content:space-between; }
+
+  /* Playlist */
+  .playlist{ margin-top:64px; border-top:2px solid var(--ink); padding-top:36px; }
+  .playlist h3{ font-family:var(--serif); font-size:24px; font-weight:500; margin-bottom:18px; }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="Education Hub — Video lessons">
+  <div class="wrap">
+    <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a href="../about/index.html">About</a>
+      <a href="../research/index.html">Research</a>
+      <a class="is-current" href="index.html">Education Hub</a>
+      <a href="#">Work With Me</a>
+      <a href="#">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#">Book a conversation</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../Home.html">Home</a><span class="sep">/</span><a href="index.html">Education Hub</a><span class="sep">/</span><span>Video-led learning</span></p>
+    <p class="roman">Chapter III · § iii</p>
+    <h1>One theory<br>at a <span class="it">time.</span></h1>
+    <p class="lede">Twenty-eight short video lessons — six to ten minutes each — that take a single theory and put it next to a workplace situation you've actually been in.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+
+    <!-- Featured -->
+    <div class="feature">
+      <div class="player">
+        <div class="ph" data-label="Featured · 06:42"></div>
+        <div class="play">▶</div>
+        <span class="time">02:11 / 06:42</span>
+        <div class="bar"><i></i></div>
+      </div>
+      <div class="info">
+        <span class="lvl">Level II · Group · Latest</span>
+        <h2>"When silence is the <em>loudest signal</em> in the room."</h2>
+        <p>A 6½ minute walk-through of Edmondson's psychological safety, told through three short workplace scenes you have almost certainly seen.</p>
+        <div class="meta">
+          <span>Psychological safety</span><span>Edmondson, 1999</span><span>Released May 2026</span>
+        </div>
+        <div style="display:flex; gap:14px; margin-top:24px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="#" style="border-radius:0;">Play lesson <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="#" style="border-radius:0;">Open transcript</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="rail">
+      <span class="lab">Filter</span>
+      <a class="on" href="#">All levels</a>
+      <a href="#">● Individual</a>
+      <a href="#">● Group</a>
+      <a href="#">● Organisational</a>
+      <span class="lab" style="margin-left:14px;">Length</span>
+      <a href="#">Under 7 min</a>
+      <a href="#">7 — 10 min</a>
+      <span class="ct">28 lessons · 12 new in 2026</span>
+    </div>
+
+    <!-- Grid -->
+    <div class="lessons">
+
+      <div class="lesson">
+        <div class="ph" data-label="Lesson art">
+          <span class="badge i">Individual</span>
+          <span class="dur">8:14</span>
+        </div>
+        <div class="body">
+          <span class="theory">Self-determination theory</span>
+          <h4>"Why your most motivated colleague is also your most fragile one."</h4>
+          <span class="meta"><span>Lesson 12</span><span>Released Apr 2026</span></span>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="ph" data-label="Lesson art">
+          <span class="badge i">Individual</span>
+          <span class="dur">6:08</span>
+        </div>
+        <div class="body">
+          <span class="theory">Equity theory</span>
+          <h4>"The colleague two desks over, and the year-end review."</h4>
+          <span class="meta"><span>Lesson 11</span><span>Released Mar 2026</span></span>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="ph" data-label="Lesson art">
+          <span class="badge i">Individual</span>
+          <span class="dur">7:22</span>
+        </div>
+        <div class="body">
+          <span class="theory">Cognitive dissonance</span>
+          <h4>"We come to believe what we have just done."</h4>
+          <span class="meta"><span>Lesson 10</span><span>Released Feb 2026</span></span>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="ph" data-label="Lesson art">
+          <span class="badge g">Group</span>
+          <span class="dur">6:42</span>
+        </div>
+        <div class="body">
+          <span class="theory">Psychological safety</span>
+          <h4>"When silence is the loudest signal in the room."</h4>
+          <span class="meta"><span>Lesson 09</span><span>Released May 2026</span></span>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="ph" data-label="Lesson art">
+          <span class="badge g">Group</span>
+          <span class="dur">8:55</span>
+        </div>
+        <div class="body">
+          <span class="theory">Tuckman's stages</span>
+          <h4>"The fifth stage everyone forgets — and why it matters."</h4>
+          <span class="meta"><span>Lesson 08</span><span>Released Jan 2026</span></span>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="ph" data-label="Lesson art">
+          <span class="badge g">Group</span>
+          <span class="dur">7:18</span>
+        </div>
+        <div class="body">
+          <span class="theory">Groupthink</span>
+          <h4>"The meeting where everyone agreed too quickly."</h4>
+          <span class="meta"><span>Lesson 07</span><span>Released Dec 2025</span></span>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="ph" data-label="Lesson art">
+          <span class="badge g">Group</span>
+          <span class="dur">9:02</span>
+        </div>
+        <div class="body">
+          <span class="theory">Transformational leadership</span>
+          <h4>"The four 'I's — and the cost of trying to do all of them."</h4>
+          <span class="meta"><span>Lesson 06</span><span>Released Nov 2025</span></span>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="ph" data-label="Lesson art">
+          <span class="badge o">Organisational</span>
+          <span class="dur">9:08</span>
+        </div>
+        <div class="body">
+          <span class="theory">Mintzberg's configurations</span>
+          <h4>"The org chart you can see, and the one you actually work in."</h4>
+          <span class="meta"><span>Lesson 05</span><span>Released Oct 2025</span></span>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="ph" data-label="Lesson art">
+          <span class="badge o">Organisational</span>
+          <span class="dur">7:31</span>
+        </div>
+        <div class="body">
+          <span class="theory">Lewin's change model</span>
+          <h4>"Why every change initiative dies, eventually, in the refreeze."</h4>
+          <span class="meta"><span>Lesson 04</span><span>Released Sep 2025</span></span>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="ph" data-label="Lesson art">
+          <span class="badge o">Organisational</span>
+          <span class="dur">8:44</span>
+        </div>
+        <div class="body">
+          <span class="theory">Schein's culture model</span>
+          <h4>"The distance between what we say and what we are."</h4>
+          <span class="meta"><span>Lesson 03</span><span>Released Aug 2025</span></span>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="ph" data-label="Lesson art">
+          <span class="badge o">Organisational</span>
+          <span class="dur">9:51</span>
+        </div>
+        <div class="body">
+          <span class="theory">Organisational learning</span>
+          <h4>"Single-loop vs double-loop — and the meeting that taught me the difference."</h4>
+          <span class="meta"><span>Lesson 02</span><span>Released Jul 2025</span></span>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="ph" data-label="Lesson art">
+          <span class="badge i">Individual</span>
+          <span class="dur">6:32</span>
+        </div>
+        <div class="body">
+          <span class="theory">Goal-setting theory</span>
+          <h4>"Why 'do your best' is, almost always, the wrong instruction."</h4>
+          <span class="meta"><span>Lesson 01</span><span>Released Jun 2025</span></span>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="font-family:var(--mono); font-size:12px; letter-spacing:.06em; color:var(--ink-3); margin-top:32px; text-align:center;">
+      <strong style="color:var(--ink);">16 more lessons</strong> in the archive, plus four forthcoming. Filter the rail above to find them.
+    </p>
+
+    <!-- Playlist -->
+    <div class="playlist">
+      <h3>Suggested playlists</h3>
+      <div class="lessons">
+        <div class="lesson">
+          <div class="ph" data-label="Playlist · 04 lessons">
+            <span class="badge i">Playlist</span>
+            <span class="dur">34 min</span>
+          </div>
+          <div class="body">
+            <span class="theory">Why no one is "demotivated"</span>
+            <h4>Four lessons across the motivation theories — the playlist for the line everyone quotes from the book.</h4>
+            <span class="meta"><span>Best for · students</span><span>Updated May 2026</span></span>
+          </div>
+        </div>
+        <div class="lesson">
+          <div class="ph" data-label="Playlist · 03 lessons">
+            <span class="badge g">Playlist</span>
+            <span class="dur">22 min</span>
+          </div>
+          <div class="body">
+            <span class="theory">Psychosocial safety in 22 minutes</span>
+            <h4>The Edmondson lesson, the conflict-modes lesson, and the LMX lesson — in that order.</h4>
+            <span class="meta"><span>Best for · managers</span><span>Updated May 2026</span></span>
+          </div>
+        </div>
+        <div class="lesson">
+          <div class="ph" data-label="Playlist · 04 lessons">
+            <span class="badge o">Playlist</span>
+            <span class="dur">36 min</span>
+          </div>
+          <div class="body">
+            <span class="theory">How change actually happens</span>
+            <h4>Lewin → Kotter → Argyris → Trist &amp; Bamforth — the four lessons on organisational change, in order.</h4>
+            <span class="meta"><span>Best for · executives</span><span>Updated May 2026</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section dark-section" style="text-align:center;">
+  <div class="wrap">
+    <span class="eyebrow">Free, for students, forever</span>
+    <p class="display" style="max-width:18ch; margin:18px auto 0;">Subscribe and the new lessons land in your inbox the morning they're released.</p>
+    <div style="display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="#" style="border-radius:0;">Subscribe to lessons <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="#" style="color:var(--ink-on-dark); border-color:var(--line-dark); border-radius:0;">YouTube ↗</a>
+    </div>
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="theory-guide.html">
+    <span class="lab">← Previous section</span>
+    <span class="ttl">ii · OB theory guide</span>
+  </a>
+  <a class="next" href="../about/index.html">
+    <span class="lab">Back to top →</span>
+    <span class="ttl">I · About</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="../about/index.html">About</a><a href="../research/index.html">Research</a><a href="index.html">Education Hub</a><a href="#">Work With Me</a><a href="#">Podcast</a></div>
+      <div><h4>More</h4><a href="#">Testimonials</a><a href="#">Student feedback</a><a href="#">Travel &amp; whereabouts</a><a href="#">FAQ</a></div>
+      <div><h4>Connect</h4><a href="#">Contact</a><a href="#">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media &amp; Citations — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  /* Metric block (h-index, citations etc.) */
+  .metrics{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:0; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); margin-top:48px; }
+  .metric{ padding:28px 0 28px 24px; border-left:1px solid var(--line); }
+  .metric:first-child{ border-left:0; padding-left:0; }
+  .metric .n{ font-family:var(--serif); font-size:clamp(44px,5vw,68px); line-height:1; letter-spacing:-.02em; font-weight:500; }
+  .metric .n .accent{ color:var(--accent); }
+  .metric .lab{ font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin-top:10px; display:block; }
+  .metric .src{ font-family:var(--mono); font-size:11px; letter-spacing:.04em; color:var(--ink-3); margin-top:4px; display:block; }
+
+  /* Press feature row */
+  .press{ display:grid; grid-template-columns:160px 1fr auto; gap:24px; padding:24px 0; border-top:1px solid var(--line-2); align-items:baseline; text-decoration:none; color:var(--ink); transition:.15s; }
+  .press:last-of-type{ border-bottom:1px solid var(--line-2); }
+  .press:hover{ background:var(--accent-tint); padding-inline:12px; }
+  .press .outlet{ font-family:var(--serif); font-style:italic; font-size:18px; color:var(--ink); }
+  .press .date{ font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; color:var(--ink-3); display:block; margin-top:4px; }
+  .press .ttl{ font-family:var(--serif); font-size:19px; line-height:1.35; font-weight:500; }
+  .press .kind{ font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); margin-top:6px; display:block; }
+  .press .arrow{ font-family:var(--mono); color:var(--ink-3); font-size:14px; align-self:center; }
+  .press:hover .arrow{ color:var(--accent); }
+  @media(max-width:760px){ .press{ grid-template-columns:1fr; gap:6px; } .press .arrow{ display:none; } }
+
+  /* Citing works block */
+  .citing-card{ background:var(--paper-2); border:1px solid var(--line); padding:24px; border-radius:var(--radius-lg); }
+  .citing-card .cap{ font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; display:block; }
+  .citing-card .ttl{ font-family:var(--serif); font-size:18px; font-weight:500; line-height:1.35; }
+  .citing-card .auth{ font-family:var(--sans); font-size:13.5px; color:var(--ink-2); margin-top:6px; }
+  .citing-card .auth em{ font-family:var(--serif); font-style:italic; }
+  .citing-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; margin-top:24px; }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="Research — Media & citations">
+  <div class="wrap">
+    <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a href="../about/index.html">About</a>
+      <a class="is-current" href="index.html">Research</a>
+      <a href="../education-hub/index.html">Education Hub</a>
+      <a href="#">Work With Me</a>
+      <a href="#">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#">Book a conversation</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../Home.html">Home</a><span class="sep">/</span><a href="index.html">Research</a><span class="sep">/</span><span>Media &amp; citations</span></p>
+    <p class="roman">Chapter II · § ii</p>
+    <h1>Where the<br>research has <span class="it">travelled.</span></h1>
+    <p class="lede">A live record of academic citations, press features and policy mentions — updated quarterly. Numbers are scaffold values; client to confirm against Scholar.</p>
+
+    <div class="metrics">
+      <div class="metric"><span class="n"><span class="accent">600</span>+</span><span class="lab">Citations</span><span class="src">Google Scholar · placeholder</span></div>
+      <div class="metric"><span class="n">14</span><span class="lab">h-index</span><span class="src">Scholar · placeholder</span></div>
+      <div class="metric"><span class="n">22</span><span class="lab">i10-index</span><span class="src">Scholar · placeholder</span></div>
+      <div class="metric"><span class="n">11</span><span class="lab">Press features</span><span class="src">Since 2020</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+
+    <div class="sec-head"><span class="rn">a</span><h2>In the press</h2></div>
+    <p class="lead" style="max-width:60ch;">Mentions, quotes and features in long-form journalism. Where I've been asked to comment on the research and have agreed.</p>
+
+    <p class="client-banner" style="margin-top:34px;">Press list below is scaffold copy — client to confirm outlets, headlines and dates.</p>
+
+    <div style="margin-top:8px;">
+
+      <a class="press" href="#">
+        <div>
+          <span class="outlet">The Conversation</span>
+          <span class="date">Apr 2025 · 1,400 words</span>
+        </div>
+        <div>
+          <div class="ttl">"There is no such thing as a demotivated person" — why workplaces, not people, need fixing</div>
+          <span class="kind">Opinion · authored piece</span>
+        </div>
+        <span class="arrow">Read ↗</span>
+      </a>
+
+      <a class="press" href="#">
+        <div>
+          <span class="outlet">ABC News</span>
+          <span class="date">Feb 2025 · interview</span>
+        </div>
+        <div>
+          <div class="ttl">The science of speaking up: what Australian hospitals are getting wrong</div>
+          <span class="kind">Quoted expert</span>
+        </div>
+        <span class="arrow">Read ↗</span>
+      </a>
+
+      <a class="press" href="#">
+        <div>
+          <span class="outlet">Sydney Morning Herald</span>
+          <span class="date">Nov 2024</span>
+        </div>
+        <div>
+          <div class="ttl">Adelaide researcher's "environment-first" approach gains traction in corporate Australia</div>
+          <span class="kind">Feature</span>
+        </div>
+        <span class="arrow">Read ↗</span>
+      </a>
+
+      <a class="press" href="#">
+        <div>
+          <span class="outlet">AFR · BOSS Magazine</span>
+          <span class="date">Sep 2024</span>
+        </div>
+        <div>
+          <div class="ttl">Why your "low motivation" team probably doesn't need a pep talk</div>
+          <span class="kind">Quoted expert</span>
+        </div>
+        <span class="arrow">Read ↗</span>
+      </a>
+
+      <a class="press" href="#">
+        <div>
+          <span class="outlet">Harvard Business Review · Ascend</span>
+          <span class="date">Jun 2024</span>
+        </div>
+        <div>
+          <div class="ttl">How to speak up at work — without burning the place down</div>
+          <span class="kind">Co-authored piece</span>
+        </div>
+        <span class="arrow">Read ↗</span>
+      </a>
+
+      <a class="press" href="#">
+        <div>
+          <span class="outlet">The Guardian (Aus)</span>
+          <span class="date">Mar 2024</span>
+        </div>
+        <div>
+          <div class="ttl">Psychosocial safety laws explained — and the research behind them</div>
+          <span class="kind">Quoted expert</span>
+        </div>
+        <span class="arrow">Read ↗</span>
+      </a>
+
+      <a class="press" href="#">
+        <div>
+          <span class="outlet">InDaily</span>
+          <span class="date">Aug 2023</span>
+        </div>
+        <div>
+          <div class="ttl">The Adelaide academic teaching managers to do less</div>
+          <span class="kind">Feature</span>
+        </div>
+        <span class="arrow">Read ↗</span>
+      </a>
+
+      <a class="press" href="#">
+        <div>
+          <span class="outlet">Times Higher Education</span>
+          <span class="date">May 2023</span>
+        </div>
+        <div>
+          <div class="ttl">"Teach as if your students will remember exactly one thing" — interview</div>
+          <span class="kind">Interview</span>
+        </div>
+        <span class="arrow">Read ↗</span>
+      </a>
+
+    </div>
+
+    <div class="sec-head" style="margin-top:90px;"><span class="rn">b</span><h2>Cited by</h2></div>
+    <p class="lead" style="max-width:60ch;">A small selection of subsequent academic work that has built on or engaged with mine. The full citation graph is best viewed on Google Scholar.</p>
+
+    <div class="citing-grid">
+      <div class="citing-card">
+        <span class="cap">Cites · 2024</span>
+        <div class="ttl">Voice climate in multinational teams: a meta-analytic review</div>
+        <div class="auth"><span class="client-note">Author TBC</span>, &amp; <span class="client-note">co-authors TBC</span> · <em>Academy of Management Annals</em>, 18(2), 412–451</div>
+      </div>
+      <div class="citing-card">
+        <span class="cap">Cites · 2024</span>
+        <div class="ttl">Reflexivity reconsidered: a critical review of fifteen years of empirical work</div>
+        <div class="auth"><span class="client-note">Author TBC</span> · <em>Organization Studies</em>, 45(11), 1955–1981</div>
+      </div>
+      <div class="citing-card">
+        <span class="cap">Cites · 2023</span>
+        <div class="ttl">Family firm value transmission: integrating ethics and process perspectives</div>
+        <div class="auth"><span class="client-note">Author TBC</span>, et al. · <em>Family Business Review</em>, 36(4), 624–645</div>
+      </div>
+      <div class="citing-card">
+        <span class="cap">Cites · 2023</span>
+        <div class="ttl">Designing classrooms for postgraduate professional learning</div>
+        <div class="auth"><span class="client-note">Author TBC</span> · <em>Studies in Higher Education</em>, 48(7), 991–1010</div>
+      </div>
+      <div class="citing-card">
+        <span class="cap">Cites · 2022</span>
+        <div class="ttl">Leadership identity: a synthesis of two decades of research</div>
+        <div class="auth"><span class="client-note">Author TBC</span> · <em>Leadership Quarterly</em>, 33(3), 101552</div>
+      </div>
+      <div class="citing-card">
+        <span class="cap">Cites · 2022</span>
+        <div class="ttl">Psychological safety at work: a state-of-the-science review</div>
+        <div class="auth"><span class="client-note">Author TBC</span>, &amp; <span class="client-note">co-author TBC</span> · <em>Annual Review of Organizational Psychology &amp; OB</em>, 9, 113–141</div>
+      </div>
+    </div>
+
+    <p style="font-family:var(--mono); font-size:12px; letter-spacing:.06em; color:var(--ink-3); margin-top:48px;">
+      For the live citation index, see Google Scholar.
+      <a class="link-arrow" href="#" style="font-size:13px; margin-left:8px;">Open Scholar profile ↗</a>
+    </p>
+
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="publications.html">
+    <span class="lab">← Previous section</span>
+    <span class="ttl">i · Publications</span>
+  </a>
+  <a class="next" href="interviews.html">
+    <span class="lab">Next section →</span>
+    <span class="ttl">iii · Online interviews</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="../about/index.html">About</a><a href="index.html">Research</a><a href="../education-hub/index.html">Education Hub</a><a href="#">Work With Me</a><a href="#">Podcast</a></div>
+      <div><h4>More</h4><a href="#">Testimonials</a><a href="#">Student feedback</a><a href="#">Travel &amp; whereabouts</a><a href="#">FAQ</a></div>
+      <div><h4>Connect</h4><a href="#">Contact</a><a href="#">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

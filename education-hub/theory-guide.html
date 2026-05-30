@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OB Theory Guide — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  /* Letter index */
+  .alpha{ display:flex; flex-wrap:wrap; gap:6px; margin-top:36px; padding:18px 22px; background:var(--paper-2); border:1px solid var(--line); }
+  .alpha a{
+    width:34px; height:34px; display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-size:12px; letter-spacing:.04em;
+    color:var(--ink-2); text-decoration:none; border:1px solid transparent; transition:.15s;
+  }
+  .alpha a:hover{ background:var(--paper); border-color:var(--line-2); color:var(--accent); }
+  .alpha a.has{ color:var(--ink); }
+  .alpha a.off{ color:var(--ink-3); }
+
+  /* Letter section */
+  .letter-section{ margin-top:48px; }
+  .letter-section .letter-h{
+    display:grid; grid-template-columns:80px 1fr; gap:24px; align-items:end;
+    border-bottom:2px solid var(--ink); padding-bottom:10px; margin-bottom:0;
+  }
+  .letter-section .letter-h .L{
+    font-family:var(--serif); font-size:clamp(56px,7vw,84px); font-weight:500; line-height:.85; letter-spacing:-.02em;
+  }
+  .letter-section .letter-h .ct{ font-family:var(--mono); font-size:11.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-3); padding-bottom:8px; }
+
+  .entry{
+    display:grid; grid-template-columns:180px 1fr 120px; gap:24px;
+    padding:24px 0; border-top:1px solid var(--line-2); align-items:baseline;
+    text-decoration:none; color:var(--ink); transition:.15s;
+  }
+  .entry:hover{ background:var(--accent-tint); padding-inline:12px; }
+  .entry .name{ font-family:var(--serif); font-size:21px; font-weight:500; line-height:1.2; letter-spacing:-.008em; }
+  .entry .who{ font-family:var(--serif); font-style:italic; font-size:14.5px; color:var(--ink-3); margin-top:2px; }
+  .entry .summ{ font-family:var(--serif); font-size:16.5px; color:var(--ink-2); line-height:1.5; max-width:60ch; }
+  .entry .level{ font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; text-align:right; align-self:center; }
+  .entry .level::before{ content:"●"; margin-right:6px; font-size:9px; }
+  .entry .level.i{ color:var(--cat-individual); }
+  .entry .level.g{ color:var(--cat-group); }
+  .entry .level.o{ color:var(--cat-org); }
+  @media(max-width:760px){ .entry{ grid-template-columns:1fr; gap:6px; } .entry .level{ text-align:left; } }
+
+  /* Legend */
+  .legend{ display:flex; gap:18px; flex-wrap:wrap; margin-top:24px; padding:14px 22px; border:1px solid var(--line); background:var(--paper-2); }
+  .legend span{ font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; display:flex; gap:8px; align-items:center; }
+  .legend span::before{ content:""; width:10px; height:10px; border-radius:50%; }
+  .legend span.i::before{ background:var(--cat-individual); }
+  .legend span.g::before{ background:var(--cat-group); }
+  .legend span.o::before{ background:var(--cat-org); }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="Education Hub — Theory guide">
+  <div class="wrap">
+    <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a href="../about/index.html">About</a>
+      <a href="../research/index.html">Research</a>
+      <a class="is-current" href="index.html">Education Hub</a>
+      <a href="#">Work With Me</a>
+      <a href="#">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#">Book a conversation</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../Home.html">Home</a><span class="sep">/</span><a href="index.html">Education Hub</a><span class="sep">/</span><span>Theory guide</span></p>
+    <p class="roman">Chapter III · § ii</p>
+    <h1>The theory<br>guide — <span class="it">A to Z.</span></h1>
+    <p class="lede">When you already know what you're looking for. Every theory indexed alphabetically, with one-line summaries, the canonical reference, and a marker for which level of analysis it lives at.</p>
+
+    <div class="legend">
+      <span class="i">Level I · Individual</span>
+      <span class="g">Level II · Group</span>
+      <span class="o">Level III · Organisational</span>
+      <span style="border:0; color:var(--ink-3);">42 entries</span>
+    </div>
+
+    <nav class="alpha" aria-label="Letter index">
+      <a class="has" href="#A">A</a>
+      <a class="has" href="#B">B</a>
+      <a class="has" href="#C">C</a>
+      <a class="off" href="#D">D</a>
+      <a class="has" href="#E">E</a>
+      <a class="has" href="#F">F</a>
+      <a class="has" href="#G">G</a>
+      <a class="has" href="#H">H</a>
+      <a class="off" href="#I">I</a>
+      <a class="has" href="#J">J</a>
+      <a class="has" href="#K">K</a>
+      <a class="has" href="#L">L</a>
+      <a class="has" href="#M">M</a>
+      <a class="off" href="#N">N</a>
+      <a class="has" href="#O">O</a>
+      <a class="has" href="#P">P</a>
+      <a class="off" href="#Q">Q</a>
+      <a class="has" href="#R">R</a>
+      <a class="has" href="#S">S</a>
+      <a class="has" href="#T">T</a>
+      <a class="off" href="#U">U</a>
+      <a class="off" href="#V">V</a>
+      <a class="off" href="#W">W</a>
+      <a class="off" href="#X">X</a>
+      <a class="off" href="#Y">Y</a>
+      <a class="off" href="#Z">Z</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+
+    <!-- A -->
+    <div class="letter-section" id="A">
+      <div class="letter-h"><span class="L">A</span><span class="ct">02 entries</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Affective events theory</div><div class="who">Weiss &amp; Cropanzano, 1996</div></div>
+        <div class="summ">Small workplace events produce small emotions; small emotions accumulate into the year you're having.</div>
+        <span class="level i">Individual</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Attribution theory</div><div class="who">Heider · Kelley · Weiner</div></div>
+        <div class="summ">When their behaviour is the issue it's their character; when ours is, it was the situation. The "fundamental" mistake.</div>
+        <span class="level i">Individual</span>
+      </a>
+    </div>
+
+    <!-- B -->
+    <div class="letter-section" id="B">
+      <div class="letter-h"><span class="L">B</span><span class="ct">02 entries</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Big Five personality</div><div class="who">Costa &amp; McCrae, 1992</div></div>
+        <div class="summ">Five trait dimensions that explain a surprisingly large amount, and a surprisingly small amount, of who shows up at work.</div>
+        <span class="level i">Individual</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Burns &amp; Stalker — mechanistic / organic</div><div class="who">Burns &amp; Stalker, 1961</div></div>
+        <div class="summ">Two structural shapes, and the conditions under which each one quietly breaks the other.</div>
+        <span class="level o">Organisational</span>
+      </a>
+    </div>
+
+    <!-- C -->
+    <div class="letter-section" id="C">
+      <div class="letter-h"><span class="L">C</span><span class="ct">03 entries</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Cognitive dissonance</div><div class="who">Festinger, 1957</div></div>
+        <div class="summ">We do not act on what we believe. We come to believe what we have just done.</div>
+        <span class="level i">Individual</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Competing values framework</div><div class="who">Quinn &amp; Rohrbaugh, 1983</div></div>
+        <div class="summ">Clan, adhocracy, market, hierarchy. Most workplaces try to be all four and end up being none.</div>
+        <span class="level o">Organisational</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Conflict modes</div><div class="who">Thomas &amp; Kilmann, 1974</div></div>
+        <div class="summ">Compete, accommodate, avoid, compromise, collaborate. None is always right; all are usually misused.</div>
+        <span class="level g">Group</span>
+      </a>
+    </div>
+
+    <!-- E -->
+    <div class="letter-section" id="E">
+      <div class="letter-h"><span class="L">E</span><span class="ct">02 entries</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Equity theory</div><div class="who">Adams, 1963</div></div>
+        <div class="summ">People do not compare themselves to ideals. They compare themselves to the person two desks over.</div>
+        <span class="level i">Individual</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Expectancy theory</div><div class="who">Vroom, 1964</div></div>
+        <div class="summ">Effort is a multiplication, not an addition — and any term going to zero collapses the whole.</div>
+        <span class="level i">Individual</span>
+      </a>
+    </div>
+
+    <!-- F -->
+    <div class="letter-section" id="F">
+      <div class="letter-h"><span class="L">F</span><span class="ct">01 entry</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">French &amp; Raven's bases of power</div><div class="who">French &amp; Raven, 1959</div></div>
+        <div class="summ">Five sources of power — coercive, reward, legitimate, referent, expert. Most workplaces over-use the first three.</div>
+        <span class="level g">Group</span>
+      </a>
+    </div>
+
+    <!-- G -->
+    <div class="letter-section" id="G">
+      <div class="letter-h"><span class="L">G</span><span class="ct">02 entries</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Goal-setting theory</div><div class="who">Locke &amp; Latham, 1990</div></div>
+        <div class="summ">Specific, difficult goals beat "do your best" — almost always, and especially when the work is dull.</div>
+        <span class="level i">Individual</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Groupthink</div><div class="who">Janis, 1972</div></div>
+        <div class="summ">Cohesion is good for output and bad for judgement. The team that agrees too quickly should be the one you worry about.</div>
+        <span class="level g">Group</span>
+      </a>
+    </div>
+
+    <!-- H -->
+    <div class="letter-section" id="H">
+      <div class="letter-h"><span class="L">H</span><span class="ct">01 entry</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Hackman &amp; Oldham — job characteristics model</div><div class="who">Hackman &amp; Oldham, 1976</div></div>
+        <div class="summ">A job's design — skill variety, task identity, autonomy, feedback — does more for motivation than any motivational speech.</div>
+        <span class="level i">Individual</span>
+      </a>
+    </div>
+
+    <!-- J -->
+    <div class="letter-section" id="J">
+      <div class="letter-h"><span class="L">J</span><span class="ct">01 entry</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Job crafting</div><div class="who">Wrzesniewski &amp; Dutton, 2001</div></div>
+        <div class="summ">The job description is a starting position, not a destination — most people quietly re-craft what they do.</div>
+        <span class="level i">Individual</span>
+      </a>
+    </div>
+
+    <!-- K -->
+    <div class="letter-section" id="K">
+      <div class="letter-h"><span class="L">K</span><span class="ct">01 entry</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Kotter's 8-step change model</div><div class="who">Kotter, 1996</div></div>
+        <div class="summ">The famous staircase — best used not as a recipe, but as a checklist of things you forgot.</div>
+        <span class="level o">Organisational</span>
+      </a>
+    </div>
+
+    <!-- L -->
+    <div class="letter-section" id="L">
+      <div class="letter-h"><span class="L">L</span><span class="ct">03 entries</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Leader–member exchange (LMX)</div><div class="who">Graen, 1976</div></div>
+        <div class="summ">There is no "the team". There are as many teams as there are dyads. Lead the relationships, not the org chart.</div>
+        <span class="level g">Group</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Lewin's change model</div><div class="who">Lewin, 1947</div></div>
+        <div class="summ">Unfreeze, change, refreeze. Still the cleanest map of why change initiatives don't stick.</div>
+        <span class="level o">Organisational</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Locke &amp; Latham — see Goal-setting</div><div class="who">cross-reference</div></div>
+        <div class="summ">See entry under <em>G · Goal-setting theory.</em></div>
+        <span class="level i">Individual</span>
+      </a>
+    </div>
+
+    <!-- M -->
+    <div class="letter-section" id="M">
+      <div class="letter-h"><span class="L">M</span><span class="ct">01 entry</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Mintzberg's configurations</div><div class="who">Mintzberg, 1979</div></div>
+        <div class="summ">Five basic shapes the organisation can take. Most dysfunction is a shape mismatch.</div>
+        <span class="level o">Organisational</span>
+      </a>
+    </div>
+
+    <!-- O -->
+    <div class="letter-section" id="O">
+      <div class="letter-h"><span class="L">O</span><span class="ct">01 entry</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Organisational learning</div><div class="who">Argyris &amp; Schön, 1978</div></div>
+        <div class="summ">Single-loop vs double-loop learning — and why most "lessons learned" sessions only do the first.</div>
+        <span class="level o">Organisational</span>
+      </a>
+    </div>
+
+    <!-- P -->
+    <div class="letter-section" id="P">
+      <div class="letter-h"><span class="L">P</span><span class="ct">02 entries</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Practice theory</div><div class="who">Schatzki · Nicolini</div></div>
+        <div class="summ">Organisations are not what they say they are. They are what they repeatedly, embodiedly, do.</div>
+        <span class="level o">Organisational</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Psychological safety</div><div class="who">Edmondson, 1999</div></div>
+        <div class="summ">The single condition without which most other team interventions are theatre.</div>
+        <span class="level g">Group</span>
+      </a>
+    </div>
+
+    <!-- R -->
+    <div class="letter-section" id="R">
+      <div class="letter-h"><span class="L">R</span><span class="ct">02 entries</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Resource dependence theory</div><div class="who">Pfeffer &amp; Salancik, 1978</div></div>
+        <div class="summ">Organisations are shaped, daily, by the things they need but do not control.</div>
+        <span class="level o">Organisational</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Reinforcement theory</div><div class="who">Skinner, 1953</div></div>
+        <div class="summ">Behaviour is shaped by what follows it. The hardest part is noticing what is actually following what.</div>
+        <span class="level i">Individual</span>
+      </a>
+    </div>
+
+    <!-- S -->
+    <div class="letter-section" id="S">
+      <div class="letter-h"><span class="L">S</span><span class="ct">04 entries</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Schein's culture model</div><div class="who">Schein, 1985</div></div>
+        <div class="summ">Artifacts, espoused values, basic assumptions — and the depressing distance between each layer.</div>
+        <span class="level o">Organisational</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Self-determination theory</div><div class="who">Deci &amp; Ryan, 1985</div></div>
+        <div class="summ">Why <em>autonomy, competence and relatedness</em> are not motivators — they are the conditions in which motivation appears.</div>
+        <span class="level i">Individual</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Self-efficacy</div><div class="who">Bandura, 1977</div></div>
+        <div class="summ">The single best predictor of whether someone will try the hard thing is whether they believe they can.</div>
+        <span class="level i">Individual</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Social identity theory</div><div class="who">Tajfel &amp; Turner, 1979</div></div>
+        <div class="summ">The group is not just where you work; under the right conditions, it is who you become at work.</div>
+        <span class="level g">Group</span>
+      </a>
+    </div>
+
+    <!-- T -->
+    <div class="letter-section" id="T">
+      <div class="letter-h"><span class="L">T</span><span class="ct">03 entries</span></div>
+      <a class="entry" href="#">
+        <div><div class="name">Transformational leadership</div><div class="who">Bass, 1985</div></div>
+        <div class="summ">The four "I"s — idealised influence, inspirational motivation, intellectual stimulation, individualised consideration.</div>
+        <span class="level g">Group</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Trist &amp; Bamforth — sociotechnical systems</div><div class="who">Trist &amp; Bamforth, 1951</div></div>
+        <div class="summ">Technology and social structure must be designed together, or one will silently eat the other.</div>
+        <span class="level o">Organisational</span>
+      </a>
+      <a class="entry" href="#">
+        <div><div class="name">Tuckman's stages</div><div class="who">Tuckman, 1965</div></div>
+        <div class="summ">Forming, storming, norming, performing — and the underrated fifth: adjourning, often skipped at great cost.</div>
+        <span class="level g">Group</span>
+      </a>
+    </div>
+
+    <p style="font-family:var(--mono); font-size:12px; letter-spacing:.06em; color:var(--ink-3); margin-top:60px;">
+      A further <strong style="color:var(--ink);">14 cross-references and minor entries</strong> are omitted from this typographic scaffold — they will appear in the live build.
+    </p>
+
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="index.html">
+    <span class="lab">← Back to chapter</span>
+    <span class="ttl">III · Education Hub</span>
+  </a>
+  <a class="next" href="video-lessons.html">
+    <span class="lab">Next section →</span>
+    <span class="ttl">iii · Video-led learning</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="../about/index.html">About</a><a href="../research/index.html">Research</a><a href="index.html">Education Hub</a><a href="#">Work With Me</a><a href="#">Podcast</a></div>
+      <div><h4>More</h4><a href="#">Testimonials</a><a href="#">Student feedback</a><a href="#">Travel &amp; whereabouts</a><a href="#">FAQ</a></div>
+      <div><h4>Connect</h4><a href="#">Contact</a><a href="#">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

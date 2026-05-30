@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guest Invitations — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  .invitation{
+    display:grid; grid-template-columns:100px 1fr 160px; gap:24px;
+    padding:26px 0; border-top:1px solid var(--line-2); align-items:baseline;
+  }
+  .invitation:last-of-type{ border-bottom:1px solid var(--line-2); }
+  .invitation .yr{ font-family:var(--mono); font-size:12.5px; letter-spacing:.08em; color:var(--ink-3); }
+  .invitation .yr .kind{ display:block; color:var(--accent); margin-bottom:4px; }
+  .invitation .ttl{ font-family:var(--serif); font-size:20px; font-weight:500; line-height:1.3; letter-spacing:-.005em; }
+  .invitation .venue{ font-family:var(--serif); font-style:italic; color:var(--ink-2); font-size:16px; margin-top:6px; }
+  .invitation .where{ font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; color:var(--ink-3); text-transform:uppercase; text-align:right; align-self:center; }
+  .invitation.future{ background:var(--accent-tint); padding-inline:16px; margin-inline:-16px; }
+  .invitation.future .where{ color:var(--accent-deep); }
+  @media(max-width:760px){ .invitation{ grid-template-columns:1fr; gap:6px; } .invitation .where{ text-align:left; } }
+
+  .group-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    border-bottom:2px solid var(--ink); padding-bottom:14px; margin-top:60px; margin-bottom:0;
+  }
+  .group-head h3{ font-family:var(--serif); font-size:clamp(24px,3vw,32px); font-weight:500; letter-spacing:-.012em; }
+  .group-head .ct{ font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); }
+
+  /* topics card */
+  .topics-card{ background:var(--paper-2); border:1px solid var(--line); padding:28px; border-radius:var(--radius-lg); margin-top:48px; }
+  .topics-card h4{ font-family:var(--mono); font-size:11.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin:0 0 16px; }
+  .topics-card .talk{ padding:14px 0; border-top:1px dashed var(--line-2); }
+  .topics-card .talk:first-of-type{ border-top:0; padding-top:0; }
+  .topics-card .talk .t{ font-family:var(--serif); font-size:19px; font-weight:500; line-height:1.3; letter-spacing:-.005em; }
+  .topics-card .talk .desc{ font-family:var(--serif); font-size:15.5px; color:var(--ink-2); margin-top:4px; line-height:1.5; }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="Research — Guest invitations">
+  <div class="wrap">
+    <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a href="../about/index.html">About</a>
+      <a class="is-current" href="index.html">Research</a>
+      <a href="../education-hub/index.html">Education Hub</a>
+      <a href="#">Work With Me</a>
+      <a href="#">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#">Book a conversation</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../Home.html">Home</a><span class="sep">/</span><a href="index.html">Research</a><span class="sep">/</span><span>Guest invitations</span></p>
+    <p class="roman">Chapter II · § iv</p>
+    <h1>Keynotes,<br>seminars &amp;<br><span class="it">invited talks.</span></h1>
+    <p class="lede">Twenty-two invited speaking engagements across academia, industry and policy — past and forthcoming. The conditions under which I most enjoy showing up.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+
+    <p class="client-banner">Engagements below are scaffold copy — client to confirm venues, dates and final talk titles.</p>
+
+    <!-- Forthcoming -->
+    <div class="group-head">
+      <h3>Forthcoming</h3>
+      <span class="ct">04 confirmed · 2026</span>
+    </div>
+    <div>
+      <div class="invitation future">
+        <span class="yr"><span class="kind">Keynote</span>Nov 2026</span>
+        <div>
+          <div class="ttl">"The environment is the intervention" — opening keynote</div>
+          <div class="venue"><em>Australian HR Institute Annual Conference</em></div>
+        </div>
+        <span class="where">Melbourne · AU</span>
+      </div>
+      <div class="invitation future">
+        <span class="yr"><span class="kind">Invited seminar</span>Sep 2026</span>
+        <div>
+          <div class="ttl">"Voice without exit — psychosocial safety in long-tenure teams"</div>
+          <div class="venue"><em>London Business School · OB Group</em></div>
+        </div>
+        <span class="where">London · UK</span>
+      </div>
+      <div class="invitation future">
+        <span class="yr"><span class="kind">Panel chair</span>Aug 2026</span>
+        <div>
+          <div class="ttl">Symposium on Reflexivity, Practice &amp; Power</div>
+          <div class="venue"><em>Academy of Management Annual Meeting</em></div>
+        </div>
+        <span class="where">Chicago · US</span>
+      </div>
+      <div class="invitation future">
+        <span class="yr"><span class="kind">Keynote</span>Jul 2026</span>
+        <div>
+          <div class="ttl">"Designing classrooms that teach" — pedagogy keynote</div>
+          <div class="venue"><em>EFMD Annual Conference</em></div>
+        </div>
+        <span class="where">Lisbon · PT</span>
+      </div>
+    </div>
+
+    <!-- Past · academic -->
+    <div class="group-head">
+      <h3>Past · academic</h3>
+      <span class="ct">12 engagements · 2018 — 2025</span>
+    </div>
+    <div>
+      <div class="invitation">
+        <span class="yr"><span class="kind">Visiting seminar</span>May 2025</span>
+        <div>
+          <div class="ttl">"Reflexivity as practice" · OB research seminar</div>
+          <div class="venue"><em>INSEAD · Singapore campus</em></div>
+        </div>
+        <span class="where">Singapore</span>
+      </div>
+      <div class="invitation">
+        <span class="yr"><span class="kind">Keynote</span>Nov 2024</span>
+        <div>
+          <div class="ttl">"What family firms taught me about value transmission" — ANZAM</div>
+          <div class="venue"><em>Australian &amp; NZ Academy of Management</em></div>
+        </div>
+        <span class="where">Sydney · AU</span>
+      </div>
+      <div class="invitation">
+        <span class="yr"><span class="kind">Invited seminar</span>Sep 2024</span>
+        <div>
+          <div class="ttl">"Becoming a leader: identity, environment, and the slow work of formation"</div>
+          <div class="venue"><em>University of Cambridge · Judge Business School</em></div>
+        </div>
+        <span class="where">Cambridge · UK</span>
+      </div>
+      <div class="invitation">
+        <span class="yr"><span class="kind">Keynote</span>Jun 2024</span>
+        <div>
+          <div class="ttl">EGOS · Sub-theme keynote on reflexivity</div>
+          <div class="venue"><em>European Group for Organizational Studies</em></div>
+        </div>
+        <span class="where">Milan · IT</span>
+      </div>
+      <div class="invitation">
+        <span class="yr"><span class="kind">Doctoral consortium</span>2018 — 2023</span>
+        <div>
+          <div class="ttl">Six doctoral consortium faculty positions · AOM, EGOS, ANZAM</div>
+          <div class="venue">Full details in the downloadable CV.</div>
+        </div>
+        <span class="where">Various</span>
+      </div>
+    </div>
+
+    <!-- Past · industry & policy -->
+    <div class="group-head">
+      <h3>Past · industry &amp; policy</h3>
+      <span class="ct">06 engagements · 2021 — 2025</span>
+    </div>
+    <div>
+      <div class="invitation">
+        <span class="yr"><span class="kind">Keynote</span>Apr 2025</span>
+        <div>
+          <div class="ttl">"Psychosocial safety in practice" · for HR leaders</div>
+          <div class="venue"><em>SafeWork SA · State Forum</em></div>
+        </div>
+        <span class="where">Adelaide · AU</span>
+      </div>
+      <div class="invitation">
+        <span class="yr"><span class="kind">Workshop</span>Feb 2025</span>
+        <div>
+          <div class="ttl">Designing reflexive teams — full-day workshop</div>
+          <div class="venue"><em>Royal Adelaide Hospital, executive leadership</em></div>
+        </div>
+        <span class="where">Adelaide · AU</span>
+      </div>
+      <div class="invitation">
+        <span class="yr"><span class="kind">Round-table</span>Nov 2024</span>
+        <div>
+          <div class="ttl">Productivity Commission · panel on workplace wellbeing</div>
+          <div class="venue"><em>Australian Government</em></div>
+        </div>
+        <span class="where">Canberra · AU</span>
+      </div>
+      <div class="invitation">
+        <span class="yr"><span class="kind">Keynote</span>Aug 2023</span>
+        <div>
+          <div class="ttl">"What 'low motivation' actually means" — for senior leaders</div>
+          <div class="venue"><em>BankSA · Annual leadership offsite</em></div>
+        </div>
+        <span class="where">Adelaide · AU</span>
+      </div>
+      <div class="invitation">
+        <span class="yr"><span class="kind">Workshop</span>2021 — 2024</span>
+        <div>
+          <div class="ttl">Three further industry workshops · government &amp; private sector</div>
+          <div class="venue">Full details available on request.</div>
+        </div>
+        <span class="where">Various</span>
+      </div>
+    </div>
+
+    <!-- Available topics -->
+    <div class="topics-card">
+      <h4>Available talks</h4>
+      <div class="talk">
+        <div class="t">The environment is the intervention</div>
+        <div class="desc">A 45-minute keynote — drawing on the FT50 work and the longitudinal field studies — on why people, processes, and structures change only when their environment does, and what that means for leaders.</div>
+      </div>
+      <div class="talk">
+        <div class="t">There is no such thing as a demotivated person</div>
+        <div class="desc">A 60-minute leadership address built around the thesis of <em>Breaking Mental Models</em>. Best suited to senior leadership offsites and conferences.</div>
+      </div>
+      <div class="talk">
+        <div class="t">Reflexivity as a workplace condition</div>
+        <div class="desc">A 90-minute teaching workshop for executive education, postgraduate cohorts, and clinical leadership programmes.</div>
+      </div>
+      <div class="talk">
+        <div class="t">Designing classrooms that teach</div>
+        <div class="desc">A 45-minute pedagogy talk for higher-education and EdTech audiences — on the architecture, behaviour and ritual of the postgraduate classroom.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section dark-section" style="text-align:center;">
+  <div class="wrap">
+    <span class="eyebrow">Invite me to speak</span>
+    <p class="display" style="max-width:18ch; margin:18px auto 0;">If the topic is right, I'd love to say yes.</p>
+    <div style="display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="#" style="border-radius:0;">Send an invitation <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="#" style="color:var(--ink-on-dark); border-color:var(--line-dark); border-radius:0;">Email directly</a>
+    </div>
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="interviews.html">
+    <span class="lab">← Previous section</span>
+    <span class="ttl">iii · Online interviews</span>
+  </a>
+  <a class="next" href="../education-hub/index.html">
+    <span class="lab">Next chapter →</span>
+    <span class="ttl">III · Education Hub</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="../about/index.html">About</a><a href="index.html">Research</a><a href="../education-hub/index.html">Education Hub</a><a href="#">Work With Me</a><a href="#">Podcast</a></div>
+      <div><h4>More</h4><a href="#">Testimonials</a><a href="#">Student feedback</a><a href="#">Travel &amp; whereabouts</a><a href="#">FAQ</a></div>
+      <div><h4>Connect</h4><a href="#">Contact</a><a href="#">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

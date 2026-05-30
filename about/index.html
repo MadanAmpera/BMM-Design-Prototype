@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  /* Portrait split */
+  .portrait{ display:grid; grid-template-columns:1.1fr 1fr; gap:0; margin-top:48px; border:2px solid var(--ink); }
+  @media(max-width:820px){ .portrait{ grid-template-columns:1fr; } }
+  .portrait .ph{ min-height:520px; border:0; border-right:2px solid var(--ink); border-radius:0; }
+  @media(max-width:820px){ .portrait .ph{ border-right:0; border-bottom:2px solid var(--ink); min-height:380px; } }
+  .portrait .body{ padding:clamp(32px,5vw,64px); display:flex; flex-direction:column; justify-content:center; }
+  .portrait .body .eyebrow-block{ margin-bottom:14px; }
+  .portrait .body h2{ font-family:var(--serif); font-weight:500; font-size:clamp(34px,4.4vw,58px); line-height:1.04; letter-spacing:-.02em; margin-bottom:20px; }
+  .portrait .body h2 em{ color:var(--accent); }
+  .portrait .body p{ font-family:var(--serif); font-size:19px; line-height:1.55; color:var(--ink-2); max-width:42ch; margin:0 0 1em; }
+  .portrait .body .sig{ margin-top:28px; font-family:var(--serif); font-style:italic; font-size:22px; color:var(--ink); }
+
+  /* journey strip */
+  .journey{ display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); }
+  @media(max-width:820px){ .journey{ grid-template-columns:repeat(2,1fr); } }
+  .j{ padding:28px 24px 28px 0; border-left:1px solid var(--line); }
+  .j:first-child{ border-left:0; padding-left:0; }
+  @media(max-width:820px){ .j{ padding-left:20px; } .j:nth-child(odd){ border-left:0; padding-left:0; } }
+  .j .place{ font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:6px; }
+  .j .yr{ font-family:var(--serif); font-size:40px; line-height:1; font-weight:500; letter-spacing:-.02em; }
+  .j .what{ font-family:var(--serif); font-size:16px; color:var(--ink-2); margin-top:8px; max-width:18ch; }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="About — landing">
+  <div class="wrap">
+    <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a class="is-current" href="index.html">About</a>
+      <a href="../research/index.html">Research</a>
+      <a href="../education-hub/index.html">Education Hub</a>
+      <a href="#">Work With Me</a>
+      <a href="#">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#">Book a conversation</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../Home.html">Home</a><span class="sep">/</span><span>About</span></p>
+    <p class="roman">Chapter I · The person</p>
+    <h1>A thirty-year<br>journey across<br><span class="it">four countries.</span></h1>
+    <p class="lede">From a hostel in Adelaide to FT50 publications and the Academy of Management — and the practice of teaching, researching, and writing about what shapes us, in the open.</p>
+    <div class="meta-row">
+      <div><span class="lab">Currently</span><span class="val">Adelaide, SA</span></div>
+      <div><span class="lab">Practice</span><span class="val">Researcher · educator</span></div>
+      <div><span class="lab">Languages</span><span class="val">English · Hindi</span></div>
+      <div><span class="lab">Domain</span><span class="val">Organisational Behaviour</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+
+    <div class="portrait">
+      <div class="ph" data-label="Portrait — Dr. Agarwal at the lectern"></div>
+      <div class="body">
+        <span class="eyebrow-block">An introduction, briefly</span>
+        <h2>Be honest, or <em>don't bother.</em></h2>
+        <p>I'm a researcher and educator working on the human side of work — psychosocial safety, reflexivity, leadership, and how teaching changes the people we ask to learn.</p>
+        <p>The story below — the hostel, the four countries, the awards and the long quiet stretches in between — is the long version. The short version is what I tell students on day one: pay attention to the environment you're standing in. It is shaping you, whether or not you've noticed.</p>
+        <p class="sig">— Ankit</p>
+      </div>
+    </div>
+
+    <div class="journey" style="margin-top:64px;">
+      <div class="j"><div class="place">India</div><div class="yr">1995</div><div class="what">First questions about why people do what they do</div></div>
+      <div class="j"><div class="place">Singapore</div><div class="yr">2008</div><div class="what">First lectures, first awards</div></div>
+      <div class="j"><div class="place">United Kingdom</div><div class="yr">2014</div><div class="what">PhD &amp; the start of the FT50 work</div></div>
+      <div class="j"><div class="place">Australia</div><div class="yr">2019</div><div class="what">Adelaide, present day</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+
+    <div class="idx-head">
+      <span class="t">In this chapter</span>
+      <span class="t" style="color:var(--ink-3);">04 sections</span>
+    </div>
+
+    <a class="idx-row" href="biography.html">
+      <span class="rn">i</span>
+      <span><h3>Biography &amp; story</h3><p class="desc">The long version — the hostel, the four countries, the resilience built and rebuilt. Written as an essay, not a bullet list.</p></span>
+      <span class="pg"><span class="count">6 min</span><span class="unit">essay</span></span>
+    </a>
+    <a class="idx-row" href="cv.html">
+      <span class="rn">ii</span>
+      <span><h3>Profile &amp; CV</h3><p class="desc">The formal academic record — education, appointments, supervision, service — with a short video introduction.</p></span>
+      <span class="pg"><span class="count">CV</span><span class="unit">full record</span></span>
+    </a>
+    <a class="idx-row" href="experience.html">
+      <span class="rn">iii</span>
+      <span><h3>Experience &amp; current projects</h3><p class="desc">Where I'm working now, and what's quietly in the oven for the next eighteen months.</p></span>
+      <span class="pg"><span class="count">04</span><span class="unit">in flight</span></span>
+    </a>
+    <a class="idx-row" href="awards.html">
+      <span class="rn">iv</span>
+      <span><h3>Awards &amp; honours</h3><p class="desc">Fifteen-plus teaching awards, research recognition, and the moments I'm quietly most proud of.</p></span>
+      <span class="pg"><span class="count">15+</span><span class="unit">honours</span></span>
+    </a>
+  </div>
+</section>
+
+<section class="section dark-section" style="text-align:center;">
+  <div class="wrap">
+    <span class="eyebrow">A note from me</span>
+    <p class="display" style="max-width:18ch; margin:18px auto 0;">If we've never spoken — start with a conversation, not a CV.</p>
+    <div style="display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="#" style="border-radius:0;">Book a conversation <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="#" style="color:var(--ink-on-dark); border-color:var(--line-dark); border-radius:0;">Email me</a>
+    </div>
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="../Home.html">
+    <span class="lab">← Previous</span>
+    <span class="ttl">Home</span>
+  </a>
+  <a class="next" href="../research/index.html">
+    <span class="lab">Next chapter →</span>
+    <span class="ttl">II · Research</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="index.html">About</a><a href="../research/index.html">Research</a><a href="../education-hub/index.html">Education Hub</a><a href="#">Work With Me</a><a href="#">Podcast</a></div>
+      <div><h4>More</h4><a href="#">Testimonials</a><a href="#">Student feedback</a><a href="#">Travel &amp; whereabouts</a><a href="#">FAQ</a></div>
+      <div><h4>Connect</h4><a href="#">Contact</a><a href="#">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

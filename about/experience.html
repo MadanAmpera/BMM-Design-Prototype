@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience &amp; Current Projects — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  /* Timeline */
+  .timeline{ position:relative; margin-top:48px; padding-left:32px; border-left:1px solid var(--line-2); }
+  .tl-item{ position:relative; padding:14px 0 36px; }
+  .tl-item::before{
+    content:""; position:absolute; left:-37px; top:22px; width:11px; height:11px;
+    background:var(--paper); border:2px solid var(--accent); border-radius:50%;
+  }
+  .tl-item.active::before{ background:var(--accent); }
+  .tl-item .when{ font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:6px; }
+  .tl-item h3{ font-family:var(--serif); font-size:24px; font-weight:500; letter-spacing:-.01em; line-height:1.15; }
+  .tl-item .where{ font-family:var(--serif); font-style:italic; color:var(--ink-2); font-size:17px; margin-top:4px; }
+  .tl-item p{ font-family:var(--serif); font-size:17px; line-height:1.55; color:var(--ink-2); max-width:60ch; margin-top:10px; }
+
+  /* current projects grid */
+  .proj-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:0; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); }
+  .proj{ padding:32px 0 32px 28px; border-left:1px solid var(--line); }
+  .proj:first-child{ border-left:0; padding-left:0; }
+  @media(max-width:680px){ .proj{ padding-left:0; border-left:0; border-top:1px solid var(--line); } .proj:first-child{ border-top:0; } }
+  .proj .stat{ font-family:var(--mono); font-size:11.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+  .proj .stat .dot{ width:6px; height:6px; border-radius:50%; background:var(--accent); display:inline-block; margin-right:8px; vertical-align:middle; animation:pulse 2.6s ease-in-out infinite; }
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.35;} }
+  .proj h3{ font-family:var(--serif); font-size:24px; font-weight:500; letter-spacing:-.01em; line-height:1.15; }
+  .proj .tags{ font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--ink-3); margin-top:6px; text-transform:uppercase; }
+  .proj p{ font-family:var(--serif); font-size:16.5px; line-height:1.5; color:var(--ink-2); margin-top:14px; max-width:38ch; }
+  .proj .with{ margin-top:18px; padding-top:14px; border-top:1px dashed var(--line-2); font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="About — Experience">
+  <div class="wrap">
+    <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a class="is-current" href="index.html">About</a>
+      <a href="../research/index.html">Research</a>
+      <a href="../education-hub/index.html">Education Hub</a>
+      <a href="#">Work With Me</a>
+      <a href="#">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#">Book a conversation</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../Home.html">Home</a><span class="sep">/</span><a href="index.html">About</a><span class="sep">/</span><span>Experience</span></p>
+    <p class="roman">Chapter I · § iii</p>
+    <h1>Where I am,<br>and what's <span class="it">in the oven.</span></h1>
+    <p class="lede">A working timeline of past appointments, and the four projects I'm spending most of my time on right now.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+
+    <div class="sec-head"><span class="rn">a</span><h2>Current — in flight</h2></div>
+
+    <div class="proj-grid">
+      <div class="proj">
+        <div class="stat"><span class="dot"></span>Active research</div>
+        <h3>Psychosocial Safety in Healthcare Teams</h3>
+        <div class="tags">Field study · 24 months · 4-site</div>
+        <p>A longitudinal field study across four South Australian hospital units, examining how local environment design shapes the willingness of clinicians to speak up.</p>
+        <div class="with">With <span class="client-note">co-investigators TBC</span></div>
+      </div>
+      <div class="proj">
+        <div class="stat"><span class="dot"></span>Writing</div>
+        <h3>Book project · Breaking Mental Models</h3>
+        <div class="tags">Draft manuscript · 2026 / 2027</div>
+        <p>A trade book that puts thirty years of OB research into the hands of anyone who has ever wondered why a workplace can't seem to change.</p>
+        <div class="with">Publisher <span class="client-note">TBC</span></div>
+      </div>
+      <div class="proj">
+        <div class="stat"><span class="dot"></span>Teaching</div>
+        <h3>Reimagining the OB classroom</h3>
+        <div class="tags">Curriculum · Postgrad</div>
+        <p>A complete rebuild of the postgraduate OB unit around the three-levels-of-analysis structure that now sits in the Education Hub.</p>
+        <div class="with">With colleagues at <span class="client-note">institution TBC</span></div>
+      </div>
+      <div class="proj">
+        <div class="stat"><span class="dot"></span>Public</div>
+        <h3>The podcast, Season 01</h3>
+        <div class="tags">8 episodes · monthly</div>
+        <p>Long, unhurried conversations with researchers, practitioners and the occasional skeptic, on the environments that shape us.</p>
+        <div class="with">Episode 01 with Asher Wright · live now</div>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:90px;"><span class="rn">b</span><h2>The road behind</h2></div>
+
+    <p class="client-banner">Timeline below is scaffold copy — client to confirm dates, titles, and institutions.</p>
+
+    <div class="timeline">
+
+      <div class="tl-item active">
+        <div class="when">2022 — present · Adelaide</div>
+        <h3>Senior Lecturer, Organisational Behaviour</h3>
+        <div class="where"><em>University placeholder</em></div>
+        <p>Research stream lead in psychosocial safety. Doctoral supervision. Postgraduate teaching. Industry consultancy through the university's centre for <span class="client-note">centre name TBC</span>.</p>
+      </div>
+
+      <div class="tl-item">
+        <div class="when">2019 — 2022 · Adelaide</div>
+        <h3>Lecturer, Management</h3>
+        <div class="where"><em>University placeholder</em></div>
+        <p>Moved to Adelaide. Built the undergraduate OB sequence still taught there today.</p>
+      </div>
+
+      <div class="tl-item">
+        <div class="when">2014 — 2018 · United Kingdom</div>
+        <h3>PhD candidate &amp; teaching fellow</h3>
+        <div class="where"><em>University placeholder</em></div>
+        <p>Doctorate completed under the supervision of <span class="client-note">supervisor TBC</span>. First publications appeared in this window, including the 2020 <em>Journal of Business Ethics</em> paper.</p>
+      </div>
+
+      <div class="tl-item">
+        <div class="when">2008 — 2014 · Singapore</div>
+        <h3>Lecturer, Business &amp; Management</h3>
+        <div class="where"><em>University placeholder</em></div>
+        <p>First academic post. First teaching awards. The decade that taught me the craft.</p>
+      </div>
+
+      <div class="tl-item">
+        <div class="when">Earlier · India</div>
+        <h3>Undergraduate years &amp; the first questions</h3>
+        <div class="where"><em>University placeholder</em></div>
+        <p>The question of <em>why people do what they do at work</em> first showed up here, and has not gone away since.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section dark-section" style="text-align:center;">
+  <div class="wrap">
+    <span class="eyebrow">Looking for the formal record?</span>
+    <p class="display" style="max-width:18ch; margin:18px auto 24px;">The full CV lives one section over.</p>
+    <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="cv.html" style="border-radius:0;">Read the CV <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="awards.html" style="color:var(--ink-on-dark); border-color:var(--line-dark); border-radius:0;">Awards &amp; honours</a>
+    </div>
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="cv.html">
+    <span class="lab">← Previous section</span>
+    <span class="ttl">ii · Profile &amp; CV</span>
+  </a>
+  <a class="next" href="awards.html">
+    <span class="lab">Next section →</span>
+    <span class="ttl">iv · Awards &amp; honours</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="index.html">About</a><a href="../research/index.html">Research</a><a href="../education-hub/index.html">Education Hub</a><a href="#">Work With Me</a><a href="#">Podcast</a></div>
+      <div><h4>More</h4><a href="#">Testimonials</a><a href="#">Student feedback</a><a href="#">Travel &amp; whereabouts</a><a href="#">FAQ</a></div>
+      <div><h4>Connect</h4><a href="#">Contact</a><a href="#">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
