@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var t=localStorage.getItem('bmm-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<title>Voices — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  /* Featured testimonial */
+  .feat-quote{ border:2px solid var(--ink); padding:clamp(32px,5vw,64px); margin-top:8px; text-align:center; }
+  .feat-quote .mark{ font-family:var(--serif); font-size:64px; line-height:0.5; color:var(--accent); display:block; height:34px; }
+  .feat-quote blockquote{ margin:0 auto; font-family:var(--serif); font-size:clamp(24px,3.4vw,40px); line-height:1.28; font-weight:500; letter-spacing:-.012em; max-width:24ch; }
+  .feat-quote blockquote em{ color:var(--accent); }
+  .feat-quote .by{ margin-top:28px; font-family:var(--mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); }
+
+  /* Testimonial grid */
+  .tcols{ columns:2; column-gap:24px; margin-top:8px; }
+  @media(max-width:760px){ .tcols{ columns:1; } }
+  .tcard{ break-inside:avoid; background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius-lg); padding:26px; margin-bottom:24px; }
+  .tcard p{ font-family:var(--serif); font-size:18px; line-height:1.5; color:var(--ink); margin:0 0 18px; }
+  .tcard p em{ color:var(--accent); font-style:italic; }
+  .tcard .who{ display:flex; align-items:center; gap:12px; padding-top:16px; border-top:1px solid var(--line); }
+  .tcard .who .av{ width:40px; height:40px; border-radius:50%; flex:none;
+    background:repeating-linear-gradient(135deg, var(--paper-3) 0 7px, transparent 7px 14px), var(--paper-3); border:1px solid var(--line-2); }
+  .tcard .who .nm{ font-family:var(--sans); font-weight:600; font-size:14.5px; color:var(--ink); }
+  .tcard .who .rl{ font-family:var(--mono); font-size:11px; letter-spacing:.04em; color:var(--ink-3); margin-top:2px; }
+
+  /* Student feedback video grid */
+  .vids{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:8px; }
+  @media(max-width:820px){ .vids{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:520px){ .vids{ grid-template-columns:1fr; } }
+  .vid{ border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; background:var(--paper-2); }
+  .vid .thumb{ position:relative; aspect-ratio:16/10; border-bottom:1px solid var(--line);
+    background:repeating-linear-gradient(135deg, var(--paper-3) 0 11px, transparent 11px 22px), var(--paper-2);
+    display:flex; align-items:center; justify-content:center; }
+  .vid .thumb .play{ width:54px; height:54px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:20px; padding-left:4px; }
+  .vid .thumb .ph-lab{ position:absolute; bottom:10px; left:10px; font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); background:var(--paper); border:1px solid var(--line-2); padding:3px 8px; border-radius:99px; }
+  .vid .cap{ padding:18px 20px; }
+  .vid .cap .q{ font-family:var(--serif); font-size:16.5px; line-height:1.4; color:var(--ink); margin:0 0 10px; }
+  .vid .cap .nm{ font-family:var(--mono); font-size:11px; letter-spacing:.06em; color:var(--ink-3); }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="Voices — landing">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a href="../about/index.html">About</a>
+      <a href="../research/index.html">Research</a>
+      <a href="../education-hub/index.html">Education Hub</a>
+      <a href="../work-with-me/index.html">Work With Me</a>
+      <a href="../podcast/index.html">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="../connect/index.html">Get in touch</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">Home</a><span class="sep">/</span><span>Voices</span></p>
+    <p class="roman">Chapter VI · Social proof</p>
+    <h1>In their<br><span class="it">own words.</span></h1>
+    <p class="lede">Testimonials from organisations and leaders, and feedback from the students who've sat in the room — on video and in writing. The clearest measure of whether the work actually shifts anything.</p>
+    <div class="stat-grid" style="margin-top:48px;">
+      <div class="stat"><span class="n"><span class="accent">15</span>+</span><span class="lab">Teaching awards</span></div>
+      <div class="stat"><span class="n">10k+</span><span class="lab">Students taught</span></div>
+      <div class="stat"><span class="n">4</span><span class="lab">Countries</span></div>
+      <div class="stat"><span class="n">★★★★★</span><span class="lab">Student rating</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <p class="client-banner">All quotations on this page are scaffold copy — client to supply real testimonials, names, roles and video.</p>
+
+    <div class="feat-quote">
+      <span class="mark">&ldquo;</span>
+      <blockquote>He didn't fix our team. He changed the <em>conditions</em> — and then the team fixed itself.</blockquote>
+      <p class="by">Featured testimonial · <span class="client-note">name &amp; org TBC</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head"><span class="rn">a</span><h2>From organisations &amp; leaders</h2></div>
+
+    <div class="tcols">
+      <div class="tcard">
+        <p>The discovery conversation alone reframed a problem we'd been circling for two years. By the end we realised we'd been trying to change the <em>4</em> — when the work was always in the <em>2s</em> and the <em>+</em>.</p>
+        <div class="who"><span class="av"></span><div><div class="nm"><span class="client-note">Name TBC</span></div><div class="rl">Head of People · Professional services</div></div></div>
+      </div>
+      <div class="tcard">
+        <p>What I valued most was the honesty. We were told, gently but clearly, that a one-day workshop wouldn't touch what we were dealing with. Nobody had ever turned down our money before.</p>
+        <div class="who"><span class="av"></span><div><div class="nm"><span class="client-note">Name TBC</span></div><div class="rl">CEO · Scaling startup</div></div></div>
+      </div>
+      <div class="tcard">
+        <p>Our engagement scores had been flat for years. The shift came when we stopped trying to "motivate" people and started reducing what was quietly driving them away.</p>
+        <div class="who"><span class="av"></span><div><div class="nm"><span class="client-note">Name TBC</span></div><div class="rl">OD Manager · Healthcare</div></div></div>
+      </div>
+      <div class="tcard">
+        <p>Psychosocial safety had been a compliance box for us. He made it the foundation of how we actually lead. Six months on, people are saying things in meetings they'd never have risked before.</p>
+        <div class="who"><span class="av"></span><div><div class="nm"><span class="client-note">Name TBC</span></div><div class="rl">Executive Director · Not-for-profit</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;" id="students">
+  <div class="wrap">
+    <div class="sec-head"><span class="rn">b</span><h2>Student feedback</h2></div>
+    <p class="lead" style="max-width:62ch;">The Education Hub exists because theory finally clicks when it's taught through the life you're already living. Here's what that's sounded like, from the people on the other side of the lectern.</p>
+
+    <div class="vids">
+      <div class="vid">
+        <div class="thumb"><div class="play">▶</div><span class="ph-lab">Student video — TBC</span></div>
+        <div class="cap"><p class="q">"First time a theory ever felt like it was about my actual life."</p><p class="nm"><span class="client-note">Name TBC</span> · MBA</p></div>
+      </div>
+      <div class="vid">
+        <div class="thumb"><div class="play">▶</div><span class="ph-lab">Student video — TBC</span></div>
+        <div class="cap"><p class="q">"He doesn't teach down to you. He thinks alongside you."</p><p class="nm"><span class="client-note">Name TBC</span> · Undergraduate</p></div>
+      </div>
+      <div class="vid">
+        <div class="thumb"><div class="play">▶</div><span class="ph-lab">Student video — TBC</span></div>
+        <div class="cap"><p class="q">"The 'demotivated person' lecture changed how I manage my own team."</p><p class="nm"><span class="client-note">Name TBC</span> · Executive education</p></div>
+      </div>
+    </div>
+
+    <div class="tcols" style="margin-top:40px;">
+      <div class="tcard">
+        <p>I came in thinking organisational behaviour would be dry. I left rethinking why I'd quit my last job — and realising it was never about me at all.</p>
+        <div class="who"><span class="av"></span><div><div class="nm"><span class="client-note">Name TBC</span></div><div class="rl">Postgraduate student</div></div></div>
+      </div>
+      <div class="tcard">
+        <p>As an international student, I'd never felt a lecturer actually <em>saw</em> the work it takes to learn in a second language. This was the first.</p>
+        <div class="who"><span class="av"></span><div><div class="nm"><span class="client-note">Name TBC</span></div><div class="rl">International student</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark-section" style="text-align:center;">
+  <div class="wrap">
+    <span class="eyebrow">Worked together? Studied with me?</span>
+    <p class="display" style="max-width:18ch; margin:18px auto 0;">Your voice shapes the work.</p>
+    <p class="lead" style="max-width:46ch; margin:20px auto 0;">If something shifted — for your team, or for you — I'd be honoured to hear it, and to share it here.</p>
+    <div style="display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="../connect/index.html" style="border-radius:0;">Share your experience <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="../podcast/index.html">
+    <span class="lab">← Previous chapter</span>
+    <span class="ttl">V · The Podcast</span>
+  </a>
+  <a class="next" href="../connect/index.html">
+    <span class="lab">Next chapter →</span>
+    <span class="ttl">VII · Connect</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="../about/index.html">About</a><a href="../research/index.html">Research</a><a href="../education-hub/index.html">Education Hub</a><a href="../work-with-me/index.html">Work With Me</a><a href="../podcast/index.html">Podcast</a></div>
+      <div><h4>More</h4><a href="index.html">Testimonials</a><a href="index.html#students">Student feedback</a><a href="../connect/index.html#travel">Travel &amp; whereabouts</a><a href="../connect/faq.html">FAQ</a></div>
+      <div><h4>Connect</h4><a href="../connect/index.html">Contact</a><a href="../work-with-me/book.html">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/theme.js"></script>
+</body>
+</html>

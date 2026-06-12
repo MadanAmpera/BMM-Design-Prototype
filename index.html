@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var t=localStorage.getItem('bmm-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
 <title>Breaking Mental Models — Dr. Ankit Agarwal</title>
 <link rel="stylesheet" href="assets/bmm.css">
 <style>
@@ -37,19 +38,52 @@
   .epigraph blockquote em{ color:#D98A5E; }
   .epigraph .attr{ text-align:center; margin-top:28px; font-family:var(--mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-on-dark-2); }
 
-  /* CONTENTS */
-  .contents-head{ display:flex; align-items:baseline; justify-content:space-between; border-bottom:2px solid var(--ink); padding-bottom:16px; margin-bottom:8px; }
+  /* CONTENTS — tile grid */
+  .contents-head{ display:flex; align-items:baseline; justify-content:space-between; border-bottom:2px solid var(--ink); padding-bottom:16px; margin-bottom:24px; }
   .contents-head .t{ font-family:var(--mono); font-size:13px; letter-spacing:.2em; text-transform:uppercase; }
-  .toc-row{ display:grid; grid-template-columns:54px 1fr auto; gap:20px; align-items:baseline; padding:26px 0;
-    border-bottom:1px solid var(--line-2); text-decoration:none; color:var(--ink); transition:background .15s, padding-inline .2s; }
-  .toc-row:hover{ background:var(--accent-tint); padding-inline:16px; }
-  .toc-row .rn{ font-family:var(--mono); font-size:14px; color:var(--accent); letter-spacing:.04em; padding-top:.5em; }
-  .toc-row h3{ font-size:clamp(28px,4vw,46px); line-height:1; letter-spacing:-.02em; }
-  .toc-row .desc{ font-size:15px; color:var(--ink-2); margin-top:10px; max-width:60ch; }
-  .toc-row .pg{ text-align:right; align-self:center; }
-  .toc-row .pg .count{ font-family:var(--serif); font-size:26px; color:var(--ink); display:block; line-height:1; }
-  .toc-row .pg .unit{ font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); }
-  @media(max-width:680px){ .toc-row{ grid-template-columns:38px 1fr; } .toc-row .pg{ grid-column:2; text-align:left; margin-top:12px; } .toc-row .pg .count{ display:inline; } }
+
+  .toc-grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:14px; }
+  .toc-tile{
+    grid-column:span 4;
+    display:flex; flex-direction:column;
+    text-decoration:none; color:var(--ink);
+    background:var(--paper-2);
+    border:1px solid var(--line-2);
+    padding:22px 22px 20px;
+    position:relative;
+    min-height:200px;
+    transition:background .18s ease, border-color .18s ease, transform .18s ease;
+  }
+  .toc-grid > :nth-child(n+4){ grid-column:span 3; }   /* bottom row: 4 tiles */
+  .toc-tile:hover{ background:var(--accent-tint); border-color:var(--accent); }
+  .toc-tile:hover .tt-h3{ color:var(--accent-deep); }
+  .toc-tile:hover .tt-arrow{ transform:translateX(4px); color:var(--accent); }
+
+  .tt-head{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+  .tt-rn{ font-family:var(--mono); font-size:12px; letter-spacing:.18em; color:var(--accent); }
+  .tt-count{ font-family:var(--serif); font-style:italic; font-size:16px; color:var(--ink-3); }
+  .tt-count b{ font-style:normal; font-weight:500; color:var(--ink); font-family:var(--serif); font-size:22px; margin-right:6px; letter-spacing:-.01em; }
+
+  .tt-h3{ font-family:var(--serif); font-weight:500; font-size:clamp(24px,2.2vw,30px); line-height:1.02; letter-spacing:-.015em; margin:18px 0 10px; transition:color .18s; }
+  .toc-grid > :nth-child(n+4) .tt-h3{ font-size:clamp(22px,1.9vw,26px); }
+  .tt-desc{ font-size:13.5px; line-height:1.45; color:var(--ink-2); margin:0;
+    display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+  .toc-grid > :nth-child(n+4) .tt-desc{ -webkit-line-clamp:2; }
+
+  .tt-foot{ margin-top:auto; padding-top:16px;
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    border-top:1px solid var(--line-2);
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); }
+  .tt-arrow{ font-family:var(--serif); font-style:normal; font-size:18px; color:var(--ink-2); transition:transform .18s ease, color .18s ease; }
+
+  @media(max-width:1100px){
+    .toc-tile{ grid-column:span 6; min-height:180px; }
+    .toc-grid > :nth-child(n+4){ grid-column:span 6; }
+  }
+  @media(max-width:620px){
+    .toc-tile, .toc-grid > :nth-child(n+4){ grid-column:span 12; min-height:0; }
+    .tt-desc{ -webkit-line-clamp:2 !important; }
+  }
 
   /* feature split */
   .feature{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:2px solid var(--ink); border-radius:0; overflow:hidden; }
@@ -66,19 +100,20 @@
   footer.site h4{ font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); font-weight:500; margin-bottom:14px; }
   footer.site a{ display:block; color:var(--ink); text-decoration:none; font-size:14.5px; padding:5px 0; }
   footer.site a:hover{ color:var(--accent); }
+  footer.site a.brand{ display:inline-flex; padding:0; }
   .foot-bottom{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-top:44px; padding-top:22px; border-top:1px solid var(--line-2); }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="site" data-screen-label="Home D3">
+<nav class="site" data-screen-label="Home D3 — Tile Contents">
   <div class="wrap">
-    <a class="brand" href="Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <a class="brand" href="index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
     <div class="navlinks">
-      <a href="about/index.html">About</a><a href="research/index.html">Research</a><a href="education-hub/index.html">Education Hub</a><a href="#">Work With Me</a><a href="#">Podcast</a>
+      <a href="about/index.html">About</a><a href="research/index.html">Research</a><a href="education-hub/index.html">Education Hub</a><a href="work-with-me/index.html">Work With Me</a><a href="podcast/index.html">Podcast</a>
     </div>
-    <a class="btn btn-primary" href="#" style="padding:9px 16px; border-radius:0;">Book a conversation</a>
+    <a class="btn btn-primary" href="work-with-me/book.html" style="padding:9px 16px; border-radius:0;">Book a conversation</a>
   </div>
 </nav>
 
@@ -102,7 +137,7 @@
   </div>
 </section>
 
-<!-- CONTENTS -->
+<!-- CONTENTS — TILE GRID -->
 <section class="section">
   <div class="wrap">
     <div class="contents-head">
@@ -110,41 +145,56 @@
       <span class="t" style="color:var(--ink-3);">2026</span>
     </div>
 
-    <a class="toc-row" href="about/index.html">
-      <span class="rn">I</span>
-      <span><h3>About</h3><p class="desc">From a hostel in Adelaide to the world stage — the story, the CV, and what a thirty-year journey across four countries taught me about resilience.</p></span>
-      <span class="pg"><span class="count">01</span><span class="unit">The person</span></span>
-    </a>
-    <a class="toc-row" href="research/index.html">
-      <span class="rn">II</span>
-      <span><h3>Research</h3><p class="desc">Publications across four pillars — psychosocial safety, reflexivity, leadership, and teaching — including FT50 and Academy of Management work.</p></span>
-      <span class="pg"><span class="count">40+</span><span class="unit">Publications</span></span>
-    </a>
-    <a class="toc-row" href="education-hub/index.html">
-      <span class="rn">III</span>
-      <span><h3>Education Hub</h3><p class="desc">Every major Organisational Behaviour theory across three levels of analysis — taught first through the life you're already living.</p></span>
-      <span class="pg"><span class="count">3</span><span class="unit">Levels</span></span>
-    </a>
-    <a class="toc-row" href="#">
-      <span class="rn">IV</span>
-      <span><h3>Work With Me</h3><p class="desc">Consulting, coaching, training and assessment for organisations — built on psychosocial safety and sustained, environment-led change.</p></span>
-      <span class="pg"><span class="count">08</span><span class="unit">Services</span></span>
-    </a>
-    <a class="toc-row" href="#">
-      <span class="rn">V</span>
-      <span><h3>The Podcast</h3><p class="desc">Honest, unfiltered conversations that say the thing nobody else will. Episode 01 with Asher Wright now live.</p></span>
-      <span class="pg"><span class="count">EP 01</span><span class="unit">Now live</span></span>
-    </a>
-    <a class="toc-row" href="#">
-      <span class="rn">VI</span>
-      <span><h3>Voices</h3><p class="desc">Testimonials and student feedback — in their words, on video and in writing.</p></span>
-      <span class="pg"><span class="count">★</span><span class="unit">Feedback</span></span>
-    </a>
-    <a class="toc-row" href="#">
-      <span class="rn">VII</span>
-      <span><h3>Connect</h3><p class="desc">Get in touch, see where in the world I am, and find answers to common questions.</p></span>
-      <span class="pg"><span class="count">→</span><span class="unit">Get in touch</span></span>
-    </a>
+    <div class="toc-grid">
+      <a class="toc-tile" href="about/index.html">
+        <div class="tt-head"><span class="tt-rn">I</span><span class="tt-count"><b>01</b>The person</span></div>
+        <h3 class="tt-h3">About</h3>
+        <p class="tt-desc">From a hostel in Adelaide to the world stage — the story, the CV, and what a thirty-year journey across four countries taught me about resilience.</p>
+        <div class="tt-foot"><span>Biography · CV · Awards</span><span class="tt-arrow">→</span></div>
+      </a>
+
+      <a class="toc-tile" href="research/index.html">
+        <div class="tt-head"><span class="tt-rn">II</span><span class="tt-count"><b>40+</b>Publications</span></div>
+        <h3 class="tt-h3">Research</h3>
+        <p class="tt-desc">Publications across four pillars — psychosocial safety, reflexivity, leadership, and teaching — including FT50 and Academy of Management work.</p>
+        <div class="tt-foot"><span>Papers · Media · Interviews</span><span class="tt-arrow">→</span></div>
+      </a>
+
+      <a class="toc-tile" href="education-hub/index.html">
+        <div class="tt-head"><span class="tt-rn">III</span><span class="tt-count"><b>03</b>Levels</span></div>
+        <h3 class="tt-h3">Education Hub</h3>
+        <p class="tt-desc">Every major Organisational Behaviour theory across three levels of analysis — taught first through the life you're already living.</p>
+        <div class="tt-foot"><span>Theory · Video · Practice</span><span class="tt-arrow">→</span></div>
+      </a>
+
+      <a class="toc-tile" href="work-with-me/index.html">
+        <div class="tt-head"><span class="tt-rn">IV</span><span class="tt-count"><b>08</b>Services</span></div>
+        <h3 class="tt-h3">Work With Me</h3>
+        <p class="tt-desc">Consulting, coaching, training and assessment for organisations.</p>
+        <div class="tt-foot"><span>For organisations</span><span class="tt-arrow">→</span></div>
+      </a>
+
+      <a class="toc-tile" href="podcast/index.html">
+        <div class="tt-head"><span class="tt-rn">V</span><span class="tt-count"><b>EP 01</b>Now live</span></div>
+        <h3 class="tt-h3">The Podcast</h3>
+        <p class="tt-desc">Honest, unfiltered conversations that say the thing nobody else will.</p>
+        <div class="tt-foot"><span>With Asher Wright</span><span class="tt-arrow">→</span></div>
+      </a>
+
+      <a class="toc-tile" href="voices/index.html">
+        <div class="tt-head"><span class="tt-rn">VI</span><span class="tt-count"><b>★</b>Feedback</span></div>
+        <h3 class="tt-h3">Voices</h3>
+        <p class="tt-desc">Testimonials and student feedback — in their words, on video and in writing.</p>
+        <div class="tt-foot"><span>Testimonials · Reviews</span><span class="tt-arrow">→</span></div>
+      </a>
+
+      <a class="toc-tile" href="connect/index.html">
+        <div class="tt-head"><span class="tt-rn">VII</span><span class="tt-count"><b>→</b>Get in touch</span></div>
+        <h3 class="tt-h3">Connect</h3>
+        <p class="tt-desc">Get in touch, see where in the world I am, and find answers to common questions.</p>
+        <div class="tt-foot"><span>Contact · Travel · FAQ</span><span class="tt-arrow">→</span></div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -157,7 +207,7 @@
         <span class="eyebrow">Plate I · The core idea</span>
         <h2 class="h2" style="margin:14px 0 14px; max-width:16ch;">The environment is the intervention.</h2>
         <p style="color:var(--ink-2); max-width:48ch;">Neither the water nor the ice chose to change — they responded to the environment they were placed in, and stayed in it long enough. Change the environment. Sustain it. The transformation follows.</p>
-        <a class="link-arrow" href="#" style="margin-top:20px;">Read the philosophy →</a>
+        <a class="link-arrow" href="work-with-me/index.html" style="margin-top:20px;">Read the philosophy →</a>
       </div>
     </div>
   </div>
@@ -169,8 +219,8 @@
     <span class="eyebrow">Colophon &amp; contact</span>
     <p class="display">Say the thing. Have the conversation. Break the model.</p>
     <div style="display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap;">
-      <a class="btn btn-primary" href="#" style="border-radius:0;">Book a conversation <span class="arrow">→</span></a>
-      <a class="btn btn-ghost" href="#" style="color:var(--ink-on-dark); border-color:var(--line-dark); border-radius:0;">Get in touch</a>
+      <a class="btn btn-primary" href="work-with-me/book.html" style="border-radius:0;">Book a conversation <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="connect/index.html" style="color:var(--ink-on-dark); border-color:var(--line-dark); border-radius:0;">Get in touch</a>
     </div>
   </div>
 </section>
@@ -180,12 +230,12 @@
   <div class="wrap">
     <div class="colophon">
       <div>
-        <a class="brand" href="Home.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <a class="brand" href="index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
         <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
       </div>
-      <div><h4>Explore</h4><a href="about/index.html">About</a><a href="research/index.html">Research</a><a href="education-hub/index.html">Education Hub</a><a href="#">Work With Me</a><a href="#">Podcast</a></div>
-      <div><h4>More</h4><a href="#">Testimonials</a><a href="#">Student feedback</a><a href="#">Travel &amp; whereabouts</a><a href="#">FAQ</a></div>
-      <div><h4>Connect</h4><a href="#">Contact</a><a href="#">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+      <div><h4>Explore</h4><a href="about/index.html">About</a><a href="research/index.html">Research</a><a href="education-hub/index.html">Education Hub</a><a href="work-with-me/index.html">Work With Me</a><a href="podcast/index.html">Podcast</a></div>
+      <div><h4>More</h4><a href="voices/index.html">Testimonials</a><a href="voices/index.html#students">Student feedback</a><a href="connect/index.html#travel">Travel &amp; whereabouts</a><a href="connect/faq.html">FAQ</a></div>
+      <div><h4>Connect</h4><a href="connect/index.html">Contact</a><a href="work-with-me/book.html">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
     </div>
     <div class="foot-bottom meta">
       <span>© 2026 Breaking Mental Models</span>
@@ -194,5 +244,6 @@
   </div>
 </footer>
 
+<script src="assets/theme.js"></script>
 </body>
 </html>

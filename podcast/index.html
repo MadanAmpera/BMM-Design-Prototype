@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var t=localStorage.getItem('bmm-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<title>The Podcast — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  /* Featured episode player */
+  .feat-ep{ display:grid; grid-template-columns:1fr 1.1fr; gap:0; border:2px solid var(--ink); margin-top:8px; }
+  @media(max-width:860px){ .feat-ep{ grid-template-columns:1fr; } }
+  .feat-ep .art{ position:relative; border-right:2px solid var(--ink); min-height:420px;
+    background:repeating-linear-gradient(135deg, var(--paper-3) 0 11px, transparent 11px 22px), var(--paper-2);
+    display:flex; align-items:center; justify-content:center; }
+  @media(max-width:860px){ .feat-ep .art{ border-right:0; border-bottom:2px solid var(--ink); min-height:300px; } }
+  .feat-ep .art .play{ width:84px; height:84px; border-radius:50%; background:var(--accent); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:30px; padding-left:6px; box-shadow:0 16px 40px -16px rgba(189,91,42,.7); }
+  .feat-ep .art .ph-lab{ position:absolute; bottom:14px; left:14px; font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); background:var(--paper); border:1px solid var(--line-2); padding:5px 10px; border-radius:99px; }
+  .feat-ep .body{ padding:clamp(28px,3.6vw,52px); display:flex; flex-direction:column; justify-content:center; }
+  .feat-ep .body .ep-no{ font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); }
+  .feat-ep .body h2{ font-family:var(--serif); font-size:clamp(28px,3.4vw,42px); font-weight:500; line-height:1.08; letter-spacing:-.018em; margin:12px 0 16px; }
+  .feat-ep .body p{ font-family:var(--serif); font-size:18px; line-height:1.55; color:var(--ink-2); margin:0 0 1em; max-width:48ch; }
+  .feat-ep .body .credits{ display:flex; flex-wrap:wrap; gap:10px; margin:8px 0 22px; }
+
+  /* anchors row */
+  .anchors{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); margin-top:8px; }
+  @media(max-width:760px){ .anchors{ grid-template-columns:1fr; } }
+  .anchor{ padding:30px 28px 30px 0; border-left:1px solid var(--line); }
+  .anchor:first-child{ border-left:0; }
+  @media(max-width:760px){ .anchor{ border-left:0; padding-left:0; border-top:1px solid var(--line); padding-top:28px; } .anchor:first-child{ border-top:0; padding-top:0; } }
+  .anchor .n{ font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); }
+  .anchor h4{ font-family:var(--serif); font-size:22px; font-weight:500; margin:10px 0 8px; letter-spacing:-.01em; }
+  .anchor p{ font-size:15px; color:var(--ink-2); margin:0; line-height:1.5; }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="Podcast — landing">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a href="../about/index.html">About</a>
+      <a href="../research/index.html">Research</a>
+      <a href="../education-hub/index.html">Education Hub</a>
+      <a href="../work-with-me/index.html">Work With Me</a>
+      <a class="is-current" href="index.html">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="be-a-guest.html">Be a guest</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">Home</a><span class="sep">/</span><span>The Podcast</span></p>
+    <p class="roman">Chapter V · The conversations</p>
+    <h1>Say the thing<br>nobody else<br><span class="it">will.</span></h1>
+    <p class="lede">A podcast that calls out the elephant in the room — honest, unfiltered conversations about the things that shape us, challenge us, and quietly run our lives. No rigid script. No rehearsed answers. No safe corporate takes. Just two people going somewhere real.</p>
+    <div class="meta-row">
+      <div><span class="lab">Now live</span><span class="val">Episode 01</span></div>
+      <div><span class="lab">Format</span><span class="val">Long-form · unscripted</span></div>
+      <div><span class="lab">The rule</span><span class="val">Be honest or don't bother</span></div>
+      <div><span class="lab">Listen on</span><span class="val">YouTube · Spotify</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head"><span class="rn">a</span><h2>Featured episode</h2></div>
+
+    <div class="feat-ep">
+      <div class="art">
+        <div class="play">▶</div>
+        <span class="ph-lab">Episode artwork — EP 01</span>
+      </div>
+      <div class="body">
+        <span class="ep-no">Episode 01 · Now live</span>
+        <h2>Memoirs to Millions — a conversation with Asher Wright.</h2>
+        <p>Two men who left home at 18. One joined the U.S. Army for 22 years; the other crossed four countries collecting degrees and building education systems. Both landed in the same place: the environment shapes the person, not the other way around.</p>
+        <div class="credits">
+          <span class="tag accent">EP 01</span>
+          <span class="tag">Guest · Asher Wright</span>
+          <span class="tag">Recorded 2 Apr 2026</span>
+        </div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="episodes.html" style="border-radius:0;">Listen to the full episode <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="philosophy.html" style="border-radius:0;">Why this show exists</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head"><span class="rn">b</span><h2>Three anchors. One real conversation.</h2></div>
+    <p class="lead" style="max-width:62ch;">Every episode follows a loose but intentional arc — not a script, but a rhythm. From the featured Memoirs to Millions conversation:</p>
+
+    <div class="anchors">
+      <div class="anchor"><span class="n">Anchor 01</span><h4>Ice &amp; water</h4><p>Neither has agency — the environment creates the change. So what does a gap year need to look like to actually shift the environment, not just pause it?</p></div>
+      <div class="anchor"><span class="n">Anchor 02</span><h4>When structure disappears</h4><p>After 22 years in the military, the scaffolding fell away — and the emotions he'd outrun for decades caught up. What happens in that first moment?</p></div>
+      <div class="anchor"><span class="n">Anchor 03</span><h4>Time on, not time off</h4><p>Awareness is the elixir of life. Most treat a gap year as time off. We ask: how does it become time <em>on</em> — and what does it cost you to get it wrong?</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head"><span class="rn">c</span><h2>In this chapter</h2></div>
+
+    <div class="idx-head"><span class="t">Sections</span><span class="t" style="color:var(--ink-3);">03</span></div>
+
+    <a class="idx-row" href="episodes.html">
+      <span class="rn">i</span>
+      <span><h3>Episode library</h3><p class="desc">Every conversation lives here — one completed, more on the way. Each episode is a different question, a different guest, a different model waiting to be broken.</p></span>
+      <span class="pg"><span class="count">EP 01</span><span class="unit">+ pipeline</span></span>
+    </a>
+    <a class="idx-row" href="be-a-guest.html">
+      <span class="rn">ii</span>
+      <span><h3>Be a guest</h3><p class="desc">No blue tick required. The only qualification is that you've lived something, learned something, or questioned something — and you're willing to say it out loud.</p></span>
+      <span class="pg"><span class="count">03</span><span class="unit">steps</span></span>
+    </a>
+    <a class="idx-row" href="philosophy.html">
+      <span class="rn">iii</span>
+      <span><h3>The philosophy</h3><p class="desc">What "breaking mental models" actually means, why it matters now, and what one episode can do for the person listening.</p></span>
+      <span class="pg"><span class="count">→</span><span class="unit">the why</span></span>
+    </a>
+  </div>
+</section>
+
+<section class="section dark-section" style="text-align:center;">
+  <div class="wrap">
+    <span class="eyebrow">The one rule</span>
+    <p class="display" style="margin:18px auto 0; max-width:16ch;">Be honest or <span style="color:#D98A5E; font-style:italic;">don't bother.</span></p>
+    <p class="lead" style="max-width:48ch; margin:20px auto 0;">That's the whole brief. No brand management. No staying on script. Just two humans sitting with a hard question and refusing to take the easy exit.</p>
+    <div style="display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="episodes.html" style="border-radius:0;">Browse episodes <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="be-a-guest.html" style="color:var(--ink-on-dark); border-color:var(--line-dark); border-radius:0;">Pitch your conversation</a>
+    </div>
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="../work-with-me/index.html">
+    <span class="lab">← Previous chapter</span>
+    <span class="ttl">IV · Work With Me</span>
+  </a>
+  <a class="next" href="../voices/index.html">
+    <span class="lab">Next chapter →</span>
+    <span class="ttl">VI · Voices</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="../about/index.html">About</a><a href="../research/index.html">Research</a><a href="../education-hub/index.html">Education Hub</a><a href="../work-with-me/index.html">Work With Me</a><a href="index.html">Podcast</a></div>
+      <div><h4>More</h4><a href="../voices/index.html">Testimonials</a><a href="../voices/index.html#students">Student feedback</a><a href="../connect/index.html#travel">Travel &amp; whereabouts</a><a href="../connect/faq.html">FAQ</a></div>
+      <div><h4>Connect</h4><a href="../connect/index.html">Contact</a><a href="../work-with-me/book.html">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/theme.js"></script>
+</body>
+</html>

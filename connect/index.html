@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var t=localStorage.getItem('bmm-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<title>Connect — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  /* channels */
+  .channels{ display:grid; grid-template-columns:repeat(2,1fr); gap:0; border:2px solid var(--ink); margin-top:8px; }
+  @media(max-width:680px){ .channels{ grid-template-columns:1fr; } }
+  .ch{ padding:30px 32px; border-left:1px solid var(--ink); border-top:1px solid var(--ink); }
+  .ch:nth-child(1), .ch:nth-child(2){ border-top:0; }
+  .ch:nth-child(odd){ border-left:0; }
+  @media(max-width:680px){ .ch{ border-left:0; } .ch:nth-child(2){ border-top:1px solid var(--ink); } }
+  .ch .lab{ font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); }
+  .ch .val{ font-family:var(--serif); font-size:clamp(20px,2.2vw,26px); font-weight:500; margin:10px 0 8px; letter-spacing:-.01em; word-break:break-word; }
+  .ch p{ font-size:14.5px; color:var(--ink-2); margin:0; line-height:1.5; }
+
+  /* audience split */
+  .aud{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:2px solid var(--ink); margin-top:8px; }
+  @media(max-width:760px){ .aud{ grid-template-columns:1fr; } }
+  .aud .a{ padding:clamp(28px,3.4vw,44px); border-left:1px solid var(--ink); }
+  .aud .a:first-child{ border-left:0; }
+  @media(max-width:760px){ .aud .a{ border-left:0; border-top:1px solid var(--ink); } .aud .a:first-child{ border-top:0; } }
+  .aud .a .ey{ font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); }
+  .aud .a h3{ font-family:var(--serif); font-size:26px; font-weight:500; margin:8px 0 12px; letter-spacing:-.01em; }
+  .aud .a p{ font-size:15.5px; color:var(--ink-2); margin:0 0 16px; line-height:1.55; }
+  .aud .a ul{ margin:0 0 18px; padding:0; list-style:none; }
+  .aud .a li{ font-size:14.5px; color:var(--ink-2); padding:9px 0; border-top:1px dashed var(--line-2); }
+  .aud .a li b{ font-family:var(--serif); font-weight:600; color:var(--ink); }
+
+  /* form */
+  .field{ margin-bottom:18px; }
+  .field label{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); margin-bottom:7px; }
+  .field input, .field select, .field textarea{ width:100%; font-family:var(--sans); font-size:15px; color:var(--ink); background:var(--paper-2); border:1px solid var(--line-2); border-radius:var(--radius); padding:12px 14px; transition:.12s; }
+  .field input:focus, .field select:focus, .field textarea:focus{ outline:none; border-color:var(--accent); background:#fff; }
+  .field textarea{ min-height:120px; resize:vertical; }
+  .two{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media(max-width:480px){ .two{ grid-template-columns:1fr; } }
+  .msg{ max-width:680px; }
+
+  /* socials */
+  .hub{ display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center; border:2px solid var(--ink); padding:26px 30px; margin-top:8px; background:var(--paper-ink); color:var(--ink-on-dark); }
+  @media(max-width:560px){ .hub{ grid-template-columns:1fr; } }
+  .hub .h3{ font-family:var(--serif); font-size:26px; font-weight:500; }
+  .hub p{ margin:6px 0 0; color:var(--ink-on-dark-2); font-size:14.5px; max-width:48ch; }
+  .socials{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-left:1px solid var(--line); border-top:1px solid var(--line); margin-top:18px; }
+  @media(max-width:680px){ .socials{ grid-template-columns:repeat(2,1fr); } }
+  .soc{ padding:18px 20px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink); transition:.12s; }
+  .soc:hover{ background:var(--accent-tint); }
+  .soc .p{ font-family:var(--serif); font-size:17px; font-weight:500; }
+  .soc .d{ font-family:var(--mono); font-size:10.5px; letter-spacing:.04em; color:var(--ink-3); margin-top:2px; }
+
+  /* travel */
+  .travel{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:2px solid var(--ink); margin-top:8px; }
+  @media(max-width:760px){ .travel{ grid-template-columns:1fr; } }
+  .travel .map{ min-height:300px; border-right:2px solid var(--ink); position:relative;
+    background:repeating-linear-gradient(135deg, var(--paper-3) 0 11px, transparent 11px 22px), var(--paper-2); }
+  @media(max-width:760px){ .travel .map{ border-right:0; border-bottom:2px solid var(--ink); min-height:220px; } }
+  .travel .map .pin{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; }
+  .travel .map .pin .dot{ width:14px; height:14px; border-radius:50%; background:var(--accent); margin:0 auto 8px; box-shadow:0 0 0 6px rgba(189,91,42,.18); }
+  .travel .map .pin .pl{ font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-2); }
+  .travel .list{ padding:clamp(24px,3vw,40px); }
+  .travel .list .wh{ display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-top:1px solid var(--line-2); }
+  .travel .list .wh:first-of-type{ border-top:0; }
+  .travel .list .wh .c{ font-family:var(--serif); font-size:18px; font-weight:500; }
+  .travel .list .wh .c span{ display:block; font-family:var(--sans); font-size:13px; color:var(--ink-2); font-weight:400; }
+  .travel .list .wh .dt{ font-family:var(--mono); font-size:12px; color:var(--accent); white-space:nowrap; text-align:right; }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="Connect — landing">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a href="../about/index.html">About</a>
+      <a href="../research/index.html">Research</a>
+      <a href="../education-hub/index.html">Education Hub</a>
+      <a href="../work-with-me/index.html">Work With Me</a>
+      <a href="../podcast/index.html">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#message">Send a message</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">Home</a><span class="sep">/</span><span>Connect</span></p>
+    <p class="roman">Chapter VII · Get in touch</p>
+    <h1>Reach out.<br>Your <span class="it">way.</span></h1>
+    <p class="lede">No two people communicate the same way — and we wouldn't have it any other way. Email, a real phone call, a quick chat, or a letter to a café in Adelaide. Choose the channel that feels most natural, and we'll meet you there.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head"><span class="rn">a</span><h2>All in one place</h2></div>
+
+    <div class="channels">
+      <div class="ch">
+        <span class="lab">✉ Email</span>
+        <div class="val">hello@breakingmentalmodels.com</div>
+        <p>Thoughtful, detailed messages answered with care — every enquiry within 24 hours.</p>
+      </div>
+      <div class="ch">
+        <span class="lab">☎ Phone</span>
+        <div class="val">+61 450 921 758</div>
+        <p>Available Mon–Fri, 5pm–10pm Adelaide (ACST). Leave a voicemail outside hours and we'll call back.</p>
+      </div>
+      <div class="ch">
+        <span class="lab">💬 Live chat</span>
+        <div class="val">The bubble, bottom-right</div>
+        <p>Click the chat bubble on any page to launch instant messaging. Quick answers, no waiting around.</p>
+      </div>
+      <div class="ch">
+        <span class="lab">📍 In person</span>
+        <div class="val">A café in Adelaide</div>
+        <p>Any café of your preference in Adelaide, South Australia — by appointment. Drop a letter, or visit the creative quarter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head"><span class="rn">b</span><h2>Two doors in</h2></div>
+    <p class="lead" style="max-width:62ch;">So your message reaches the right place, tell us which one you are. Not sure which fits? Just send a message and we'll point you in the right direction.</p>
+
+    <div class="aud">
+      <div class="a">
+        <span class="ey">👩‍🎓 For learners &amp; students</span>
+        <h3>Your learning buddy — not just a service.</h3>
+        <p>We make complex theory relatable by teaching it through real, lived experience. We walk alongside you, not ahead of you.</p>
+        <ul>
+          <li><b>Theory made real</b> — videos that break theory down through everyday life</li>
+          <li><b>Assignment support</b> — we won't do it for you; we'll help you find your depth, ethically</li>
+          <li><b>University challenges</b> — exam stress, a tricky module, or just feeling lost</li>
+          <li><b>Chinese students abroad</b> — WeChat 微信公众号: BreakingMentalModels</li>
+        </ul>
+        <a class="link-arrow" href="#message">Reach out as a student →</a>
+      </div>
+      <div class="a">
+        <span class="ey">🏢 For organisations &amp; institutions</span>
+        <h3>Look at yourselves from the inside out.</h3>
+        <p>We don't just fix surface-level problems — we get to the root of what's holding your people back, and put them at the centre of change.</p>
+        <ul>
+          <li><b>Inside-out discovery</b> — surfacing the hidden barriers and unspoken challenges</li>
+          <li><b>People-centred culture</b> — environments where people feel seen and empowered</li>
+          <li><b>Learning &amp; development</b> — bespoke training around real, lived challenges</li>
+          <li><b>Speaking &amp; partnership</b> — talks, workshops, co-creation and collaboration</li>
+        </ul>
+        <a class="link-arrow" href="../work-with-me/index.html">Explore Work With Me →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head" id="message"><span class="rn">c</span><h2>Send a message</h2></div>
+    <p class="client-banner">Form is a static mock-up — to be connected to the client's inbox on build.</p>
+    <div class="msg">
+      <form onsubmit="return false;">
+        <div class="two">
+          <div class="field"><label>Your name</label><input type="text" placeholder="Full name"></div>
+          <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+        </div>
+        <div class="field">
+          <label>I'm reaching out as</label>
+          <select>
+            <option>A learner / student</option>
+            <option>An organisation / institution</option>
+            <option>A prospective podcast guest</option>
+            <option>Media / press</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field"><label>Your message</label><textarea placeholder="Tell us a little about yourself and what you need — the more honest and open, the better we can help."></textarea></div>
+        <button class="btn btn-primary" type="submit" style="border-radius:0;">Send message <span class="arrow">→</span></button>
+        <p class="meta" style="margin-top:14px;">We aim to respond to every message within 24 hours. Your voice, our innovation.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head"><span class="rn">d</span><h2>Watch &amp; follow</h2></div>
+
+    <div class="hub">
+      <div>
+        <div class="h3" style="color:#fff;">▶ YouTube — the main hub</div>
+        <p>Every video and podcast episode lives here first. Everything else links back to it. Subscribe and watch all content in one place.</p>
+      </div>
+      <a class="btn btn-primary" href="#" style="border-radius:0;">Subscribe <span class="arrow">→</span></a>
+    </div>
+
+    <div class="socials">
+      <a class="soc" href="#"><div class="p">Spotify</div><div class="d">Podcast audio</div></a>
+      <a class="soc" href="#"><div class="p">Apple Podcasts</div><div class="d">Listen on the go</div></a>
+      <a class="soc" href="#"><div class="p">Instagram</div><div class="d">Clips &amp; reels</div></a>
+      <a class="soc" href="#"><div class="p">LinkedIn</div><div class="d">Professional insight</div></a>
+      <a class="soc" href="#"><div class="p">TikTok</div><div class="d">Short-form clips</div></a>
+      <a class="soc" href="#"><div class="p">X / Twitter</div><div class="d">Updates &amp; links</div></a>
+      <a class="soc" href="#"><div class="p">WeChat</div><div class="d">公众号: BreakingMentalModels</div></a>
+      <a class="soc" href="#"><div class="p">+ more</div><div class="d">Discord · Threads · Reddit</div></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;" id="travel">
+  <div class="wrap">
+    <div class="sec-head"><span class="rn">e</span><h2>Travel &amp; whereabouts</h2></div>
+    <p class="lead" style="max-width:62ch;">Based in Adelaide, but often on the move for keynotes, seminars and recording. If our paths are about to cross, let's make the most of it.</p>
+
+    <div class="travel">
+      <div class="map"><div class="pin"><div class="dot"></div><div class="pl">Adelaide, SA · home base</div></div></div>
+      <div class="list">
+        <p class="client-banner" style="margin-bottom:20px;">Schedule below is scaffold — client to confirm dates &amp; cities.</p>
+        <div class="wh"><div class="c">Adelaide, Australia<span>Home base · available year-round</span></div><div class="dt">Ongoing</div></div>
+        <div class="wh"><div class="c">Singapore<span>Guest seminar &amp; recording</span></div><div class="dt">Aug 2026</div></div>
+        <div class="wh"><div class="c">London, UK<span>Keynote &amp; meetings</span></div><div class="dt">Oct 2026</div></div>
+        <div class="wh"><div class="c">Online<span>Virtual sessions, any time zone</span></div><div class="dt">Anytime</div></div>
+      </div>
+    </div>
+
+    <div class="idx-head" style="margin-top:60px;"><span class="t">Also in this chapter</span><span class="t" style="color:var(--ink-3);">01</span></div>
+    <a class="idx-row" href="faq.html">
+      <span class="rn">i</span>
+      <span><h3>Frequently asked questions</h3><p class="desc">Response times, working internationally, whether we'll do your assignment for you (we won't), engagement costs, and how to be a podcast guest.</p></span>
+      <span class="pg"><span class="count">→</span><span class="unit">answers</span></span>
+    </a>
+  </div>
+</section>
+
+<section class="section dark-section" style="text-align:center;">
+  <div class="wrap">
+    <span class="eyebrow">Your voice matters</span>
+    <p class="display" style="max-width:18ch; margin:18px auto 0;">Reaching out should feel as inspired as the idea you carry.</p>
+    <div style="display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="#message" style="border-radius:0;">Send a message <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="faq.html" style="color:var(--ink-on-dark); border-color:var(--line-dark); border-radius:0;">Read the FAQ</a>
+    </div>
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="../voices/index.html">
+    <span class="lab">← Previous chapter</span>
+    <span class="ttl">VI · Voices</span>
+  </a>
+  <a class="next" href="../index.html">
+    <span class="lab">Back to start →</span>
+    <span class="ttl">Home</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="../about/index.html">About</a><a href="../research/index.html">Research</a><a href="../education-hub/index.html">Education Hub</a><a href="../work-with-me/index.html">Work With Me</a><a href="../podcast/index.html">Podcast</a></div>
+      <div><h4>More</h4><a href="../voices/index.html">Testimonials</a><a href="../voices/index.html#students">Student feedback</a><a href="index.html#travel">Travel &amp; whereabouts</a><a href="faq.html">FAQ</a></div>
+      <div><h4>Connect</h4><a href="index.html">Contact</a><a href="../work-with-me/book.html">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/theme.js"></script>
+</body>
+</html>

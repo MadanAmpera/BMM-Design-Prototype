@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var t=localStorage.getItem('bmm-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<title>Services &amp; Solutions — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  .grp-head{ display:flex; align-items:baseline; gap:16px; border-bottom:2px solid var(--ink); padding-bottom:14px; margin:0 0 8px; }
+  .grp-head .rn{ font-family:var(--mono); font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); }
+  .grp-head h2{ font-family:var(--serif); font-size:clamp(24px,3vw,34px); font-weight:500; letter-spacing:-.015em; }
+  .grp-head .c{ margin-left:auto; font-family:var(--mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); }
+
+  .svc{ display:grid; grid-template-columns:56px 1fr; gap:24px; padding:40px 0; border-bottom:1px solid var(--line-2); }
+  @media(max-width:680px){ .svc{ grid-template-columns:1fr; gap:14px; } }
+  .svc .rn{ font-family:var(--mono); font-size:14px; color:var(--accent); letter-spacing:.06em; padding-top:.3em; }
+  .svc h3{ font-family:var(--serif); font-size:clamp(24px,3vw,32px); font-weight:500; line-height:1.08; letter-spacing:-.018em; }
+  .svc .intro{ font-family:var(--serif); font-size:18.5px; line-height:1.55; color:var(--ink-2); margin:14px 0 0; max-width:64ch; }
+  .svc .cols{ display:grid; grid-template-columns:1fr 280px; gap:36px; margin-top:26px; align-items:start; }
+  @media(max-width:760px){ .svc .cols{ grid-template-columns:1fr; gap:24px; } }
+  .svc .focus h4, .svc .side h4{ font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin:0 0 14px; }
+  .svc .focus ul{ margin:0; padding:0; list-style:none; }
+  .svc .focus li{ padding:12px 0; border-top:1px solid var(--line); }
+  .svc .focus li:first-child{ border-top:0; padding-top:0; }
+  .svc .focus li b{ font-family:var(--serif); font-weight:600; font-size:17px; color:var(--ink); display:block; margin-bottom:2px; }
+  .svc .focus li span{ font-size:15px; color:var(--ink-2); }
+  .svc .side{ background:var(--paper-2); border:1px solid var(--line); padding:22px; }
+  .svc .side .tl{ display:flex; gap:12px; padding:10px 0; border-top:1px dashed var(--line-2); }
+  .svc .side .tl:first-of-type{ border-top:0; }
+  .svc .side .tl .d{ font-family:var(--serif); font-size:19px; font-weight:600; color:var(--accent); white-space:nowrap; }
+  .svc .side .tl .w{ font-size:14px; color:var(--ink-2); }
+  .svc .side .best{ margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+  .svc .side .best .bl{ font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:6px; }
+  .svc .side .best p{ font-size:14.5px; color:var(--ink-2); margin:0; line-height:1.5; }
+
+  /* Glance table */
+  .glance{ width:100%; border-collapse:collapse; margin-top:18px; }
+  .glance th, .glance td{ text-align:left; padding:16px 18px; border-bottom:1px solid var(--line-2); vertical-align:top; }
+  .glance thead th{ font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); border-bottom:1px solid var(--ink); font-weight:500; }
+  .glance td.svc-n{ font-family:var(--serif); font-size:17px; font-weight:600; color:var(--ink); width:30%; }
+  .glance td.focus-c{ font-size:14.5px; color:var(--ink-2); }
+  .glance td.tl-c{ font-family:var(--mono); font-size:12.5px; color:var(--accent); white-space:nowrap; }
+  .glance tbody tr:hover{ background:var(--accent-tint); }
+  @media(max-width:680px){ .glance thead{ display:none; } .glance td{ display:block; border:0; padding:2px 0; } .glance tr{ display:block; padding:18px 0; border-bottom:1px solid var(--line-2); } .glance td.tl-c{ color:var(--ink-3); margin-top:4px; } }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="Work With Me — Services">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a href="../about/index.html">About</a>
+      <a href="../research/index.html">Research</a>
+      <a href="../education-hub/index.html">Education Hub</a>
+      <a class="is-current" href="index.html">Work With Me</a>
+      <a href="../podcast/index.html">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="book.html">Book a conversation</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">Home</a><span class="sep">/</span><a href="index.html">Work With Me</a><span class="sep">/</span><span>Services &amp; solutions</span></p>
+    <p class="roman">Chapter IV · § i</p>
+    <h1>Eight ways<br>in. One <span class="it">conviction.</span></h1>
+    <p class="lede">Each service is grounded in psychosocial safety and shaped around your organisation's readiness — never a programme bought off a shelf. We don't train people into new behaviours; we build the environments in which new behaviours become natural.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+
+    <div class="grp-head">
+      <span class="rn">Chapter 1</span>
+      <h2>Individual &amp; team interventions</h2>
+      <span class="c">04 services</span>
+    </div>
+
+    <div class="svc" id="consulting">
+      <span class="rn">i</span>
+      <div>
+        <h3>Consulting — unpacking hidden conflicts &amp; miscommunication</h3>
+        <p class="intro">Many of the most damaging tensions are never openly named. They live in assumptions and patterns of miscommunication that quietly erode trust. Our consulting brings these dynamics to the surface — safely, and never to assign blame.</p>
+        <div class="cols">
+          <div class="focus">
+            <h4>Topics of focus</h4>
+            <ul>
+              <li><b>Identifying assumptions</b><span>Recognising the underlying beliefs that quietly fuel conflict.</span></li>
+              <li><b>Creating safe spaces</b><span>Establishing conditions where employees can speak freely without fear.</span></li>
+            </ul>
+          </div>
+          <div class="side">
+            <h4>Timeline</h4>
+            <div class="tl"><span class="d">1–2 days</span><span class="w">Initial facilitated assessment</span></div>
+            <div class="tl"><span class="d">1–2 wks</span><span class="w">Follow-up sessions, tailored to the team</span></div>
+            <div class="best"><div class="bl">Best for</div><p>Teams with recurring miscommunication, unresolved friction, or stalled collaboration — any industry or size.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc" id="training">
+      <span class="rn">ii</span>
+      <div>
+        <h3>Training — an agile mindset for change &amp; decision-making</h3>
+        <p class="intro">In fast-moving environments, sound decisions under uncertainty — without burning out — are a critical capability. This is not a course; it's a capability-building process, with psychosocial safety at the centre.</p>
+        <div class="cols">
+          <div class="focus">
+            <h4>Topics of focus</h4>
+            <ul>
+              <li><b>Decision-making under uncertainty</b><span>Making informed, timely decisions when information is incomplete.</span></li>
+              <li><b>Managing workload realistically</b><span>Preventing overcommitment and protecting wellbeing under pressure.</span></li>
+              <li><b>Flexibility in practice</b><span>A culture where adapting the plan is a strength, not a failure.</span></li>
+            </ul>
+          </div>
+          <div class="side">
+            <h4>Timeline</h4>
+            <div class="tl"><span class="d">1 day</span><span class="w">Core training session</span></div>
+            <div class="tl"><span class="d">2–4 wks</span><span class="w">Optional follow-up workshops to embed practice</span></div>
+            <div class="best"><div class="bl">Best for</div><p>Teams navigating real complexity and competing demands who want to act with agility and rigour.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc" id="coaching">
+      <span class="rn">iii</span>
+      <div>
+        <h3>Coaching — leading through ethical dilemmas</h3>
+        <p class="intro">Leadership today demands more than strategic acumen. It requires courage to face ethical complexity with clarity and accountability. A confidential, structured space to work through real dilemmas — building frameworks rooted in integrity.</p>
+        <div class="cols">
+          <div class="focus">
+            <h4>Topics of focus</h4>
+            <ul>
+              <li><b>Ethical decision-making</b><span>Frameworks for navigating competing values and high-stakes choices.</span></li>
+              <li><b>Fostering accountability</b><span>Cultures of responsibility where people own outcomes without fear of blame.</span></li>
+            </ul>
+          </div>
+          <div class="side">
+            <h4>Timeline</h4>
+            <div class="tl"><span class="d">1–2 hrs</span><span class="w">Per coaching session</span></div>
+            <div class="tl"><span class="d">3–5</span><span class="w">Sessions over the course of one month</span></div>
+            <div class="best"><div class="bl">Best for</div><p>Senior, mid and emerging leaders navigating situations where the right answer is neither obvious nor comfortable.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc" id="assessment">
+      <span class="rn">iv</span>
+      <div>
+        <h3>Assessment — KPI alignment &amp; performance review</h3>
+        <p class="intro">Metrics only create value when they reflect what matters — and when the feedback around them feels safe enough to be honest. We evaluate the alignment between your KPIs and your goals, weaving psychosocial safety through every stage.</p>
+        <div class="cols">
+          <div class="focus">
+            <h4>Topics of focus</h4>
+            <ul>
+              <li><b>Evaluating KPIs</b><span>Relevance, fairness and clarity — and where measures drive counterproductive behaviour.</span></li>
+              <li><b>Feedback mechanisms</b><span>Safe, structured channels for meaningful feedback without fear of reprisal.</span></li>
+              <li><b>Aligned performance culture</b><span>Where accountability and psychological safety coexist.</span></li>
+            </ul>
+          </div>
+          <div class="side">
+            <h4>Timeline</h4>
+            <div class="tl"><span class="d">1 wk</span><span class="w">Comprehensive assessment</span></div>
+            <div class="tl"><span class="d">1 day</span><span class="w">Feedback &amp; alignment session with stakeholders</span></div>
+            <div class="best"><div class="bl">Best for</div><p>Organisations whose performance frameworks may be quietly driving the behaviours they're trying to change.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="grp-head">
+      <span class="rn">Chapter 2</span>
+      <h2>Organisational development</h2>
+      <span class="c">04 solutions</span>
+    </div>
+    <p class="lead" style="max-width:64ch; margin-bottom:8px;">Beyond individual interventions, lasting change requires structural, cultural and strategic transformation — the deeper patterns that shape how your organisation plans, adapts, leads and performs.</p>
+
+    <div class="svc" id="strategy">
+      <span class="rn">v</span>
+      <div>
+        <h3>Strategic planning with an agile lens</h3>
+        <p class="intro">Strategy often fails not because it is wrong, but because it cannot respond to shifting realities. We embed agility as a core discipline — holding firm on vision while remaining genuinely flexible on approach.</p>
+        <div class="cols">
+          <div class="focus">
+            <h4>Topics of focus</h4>
+            <ul>
+              <li><b>Agile goal-setting</b><span>Distinguishing fixed commitments from adaptive targets.</span></li>
+              <li><b>Timeline management</b><span>Balancing urgency with the depth complex challenges demand.</span></li>
+            </ul>
+          </div>
+          <div class="side">
+            <h4>Timeline</h4>
+            <div class="tl"><span class="d">2 days</span><span class="w">Initial planning sessions</span></div>
+            <div class="tl"><span class="d">Ongoing</span><span class="w">Strategic adjustments over subsequent months</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc" id="change">
+      <span class="rn">vi</span>
+      <div>
+        <h3>Change management — navigating delay &amp; resistance</h3>
+        <p class="intro">Resistance is rarely irrational. It is almost always rooted in legitimate concerns — fear of loss, distrust of process, exclusion from decisions. We treat resistance as valuable information, not an obstacle to overcome.</p>
+        <div class="cols">
+          <div class="focus">
+            <h4>Topics of focus</h4>
+            <ul>
+              <li><b>Understanding resistance</b><span>The real, often unspoken reasons people resist change.</span></li>
+              <li><b>Timely decision-making</b><span>Breaking decision paralysis and building momentum.</span></li>
+            </ul>
+          </div>
+          <div class="side">
+            <h4>Timeline</h4>
+            <div class="tl"><span class="d">1 day</span><span class="w">Core change-navigation session</span></div>
+            <div class="tl"><span class="d">2–3 wks</span><span class="w">Follow-up and implementation support</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc" id="culture">
+      <span class="rn">vii</span>
+      <div>
+        <h3>Culture transformation</h3>
+        <p class="intro">Culture is not values on a wall — it is the accumulated pattern of how people actually behave, what they're rewarded for, and what leadership silently condones. That requires an honest look at the role leadership styles themselves play.</p>
+        <div class="cols">
+          <div class="focus">
+            <h4>Topics of focus</h4>
+            <ul>
+              <li><b>Unleading in leadership</b><span>How directive, controlling or risk-averse habits suppress the safety culture needs.</span></li>
+              <li><b>Empowering teams</b><span>Shifting from compliance-driven to contribution-driven environments.</span></li>
+              <li><b>Sustained cultural shift</b><span>Ongoing assessments so new behaviours become self-reinforcing.</span></li>
+            </ul>
+          </div>
+          <div class="side">
+            <h4>Timeline</h4>
+            <div class="tl"><span class="d">2 days</span><span class="w">Intensive workshops</span></div>
+            <div class="tl"><span class="d">Months</span><span class="w">Ongoing cultural assessments</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc" id="performance" style="border-bottom:0;">
+      <span class="rn">viii</span>
+      <div>
+        <h3>Performance improvement — addressing tacit behaviours</h3>
+        <p class="intro">The biggest barriers to performance rarely appear in reviews. They are the unspoken norms and tacit expectations that shape how work gets done — and what never gets said. This brings those invisible dynamics into the light.</p>
+        <div class="cols">
+          <div class="focus">
+            <h4>Topics of focus</h4>
+            <ul>
+              <li><b>Tacit cultural behaviours</b><span>The learned assumptions and habitual patterns shaping performance beneath the surface.</span></li>
+              <li><b>Overcoming hidden barriers</b><span>Naming the unnamed to reach the real root causes of underperformance.</span></li>
+            </ul>
+          </div>
+          <div class="side">
+            <h4>Timeline</h4>
+            <div class="tl"><span class="d">1–2 days</span><span class="w">Initial workshops</span></div>
+            <div class="tl"><span class="d">4–6 wks</span><span class="w">Structured follow-up assessments</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head"><span class="rn">→</span><h2>Services at a glance</h2></div>
+    <p class="lead" style="max-width:60ch;">A comprehensive suite — each grounded in psychosocial safety and tailored to your organisation's readiness and goals.</p>
+    <table class="glance">
+      <thead>
+        <tr><th>Service</th><th>Focus area</th><th>Indicative timeline</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="svc-n">Consulting · Hidden conflicts</td><td class="focus-c">Assumptions, safe dialogue, team miscommunication</td><td class="tl-c">1–2 days + 1–2 wks</td></tr>
+        <tr><td class="svc-n">Training · Agile mindset</td><td class="focus-c">Decision-making, workload, flexibility</td><td class="tl-c">1 day + 2–4 wks</td></tr>
+        <tr><td class="svc-n">Coaching · Ethical leadership</td><td class="focus-c">Ethical dilemmas, accountability culture</td><td class="tl-c">3–5 sessions / month</td></tr>
+        <tr><td class="svc-n">Assessment · KPI alignment</td><td class="focus-c">Performance metrics, feedback channels</td><td class="tl-c">1 wk + 1 day</td></tr>
+        <tr><td class="svc-n">Strategic planning</td><td class="focus-c">Agile goal-setting, timeline management</td><td class="tl-c">2 days + ongoing</td></tr>
+        <tr><td class="svc-n">Change management</td><td class="focus-c">Resistance, decision delay, transitions</td><td class="tl-c">1 day + 2–3 wks</td></tr>
+        <tr><td class="svc-n">Culture transformation</td><td class="focus-c">Leadership styles, team empowerment</td><td class="tl-c">2 days + months</td></tr>
+        <tr><td class="svc-n">Performance improvement</td><td class="focus-c">Tacit behaviours, hidden team barriers</td><td class="tl-c">1–2 days + 4–6 wks</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section dark-section" style="text-align:center;">
+  <div class="wrap">
+    <span class="eyebrow">Not sure where to start?</span>
+    <p class="display" style="max-width:18ch; margin:18px auto 0;">Every engagement begins with one honest conversation.</p>
+    <div style="display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="book.html" style="border-radius:0;">Book a discovery session <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="engagement.html" style="color:var(--ink-on-dark); border-color:var(--line-dark); border-radius:0;">See engagement models</a>
+    </div>
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="index.html">
+    <span class="lab">← Back to</span>
+    <span class="ttl">IV · Work With Me</span>
+  </a>
+  <a class="next" href="engagement.html">
+    <span class="lab">Next section →</span>
+    <span class="ttl">ii · Engagement models</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="../about/index.html">About</a><a href="../research/index.html">Research</a><a href="../education-hub/index.html">Education Hub</a><a href="index.html">Work With Me</a><a href="../podcast/index.html">Podcast</a></div>
+      <div><h4>More</h4><a href="../voices/index.html">Testimonials</a><a href="../voices/index.html#students">Student feedback</a><a href="../connect/index.html#travel">Travel &amp; whereabouts</a><a href="../connect/faq.html">FAQ</a></div>
+      <div><h4>Connect</h4><a href="../connect/index.html">Contact</a><a href="book.html">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/theme.js"></script>
+</body>
+</html>

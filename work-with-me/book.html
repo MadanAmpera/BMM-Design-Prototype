@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var t=localStorage.getItem('bmm-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<title>Book a Discovery Session — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  .booker{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:2px solid var(--ink); margin-top:8px; }
+  @media(max-width:860px){ .booker{ grid-template-columns:1fr; } }
+  .booker .pane{ padding:clamp(26px,3.4vw,44px); }
+  .booker .pane.cal{ border-right:2px solid var(--ink); background:var(--paper-2); }
+  @media(max-width:860px){ .booker .pane.cal{ border-right:0; border-bottom:2px solid var(--ink); } }
+  .booker h2{ font-family:var(--serif); font-size:24px; font-weight:500; margin:0 0 4px; }
+  .booker .sub{ font-size:14px; color:var(--ink-3); margin:0 0 22px; }
+
+  /* mini month */
+  .month{ display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+  .month .m{ font-family:var(--serif); font-size:18px; font-weight:600; }
+  .month .nav{ font-family:var(--mono); font-size:14px; color:var(--ink-3); display:flex; gap:14px; }
+  .cal-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:4px; }
+  .cal-grid .dow{ font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); text-align:center; padding:6px 0; }
+  .cal-grid .day{ aspect-ratio:1; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:13.5px; color:var(--ink-2); border:1px solid transparent; border-radius:2px; cursor:default; }
+  .cal-grid .day.muted{ color:var(--line-2); }
+  .cal-grid .day.avail{ background:var(--paper); border-color:var(--line-2); color:var(--ink); cursor:pointer; transition:.12s; }
+  .cal-grid .day.avail:hover{ border-color:var(--accent); color:var(--accent-deep); }
+  .cal-grid .day.sel{ background:var(--accent); border-color:var(--accent); color:#fff; }
+  .slots{ display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+  .slot{ font-family:var(--mono); font-size:12.5px; padding:8px 14px; border:1px solid var(--line-2); border-radius:2px; color:var(--ink-2); cursor:pointer; transition:.12s; background:var(--paper); }
+  .slot:hover{ border-color:var(--accent); color:var(--accent-deep); }
+  .slot.sel{ background:var(--accent); border-color:var(--accent); color:#fff; }
+  .tz{ font-family:var(--mono); font-size:11px; color:var(--ink-3); margin-top:14px; letter-spacing:.04em; }
+
+  /* form */
+  .field{ margin-bottom:18px; }
+  .field label{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); margin-bottom:7px; }
+  .field input, .field select, .field textarea{ width:100%; font-family:var(--sans); font-size:15px; color:var(--ink); background:var(--paper-2); border:1px solid var(--line-2); border-radius:var(--radius); padding:12px 14px; transition:.12s; }
+  .field input:focus, .field select:focus, .field textarea:focus{ outline:none; border-color:var(--accent); background:#fff; }
+  .field textarea{ min-height:96px; resize:vertical; }
+  .two{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media(max-width:480px){ .two{ grid-template-columns:1fr; } }
+
+  .expect{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-top:8px; }
+  @media(max-width:680px){ .expect{ grid-template-columns:1fr; } }
+  .expect .e{ padding:26px 26px 26px 0; border-left:1px solid var(--line); }
+  .expect .e:first-child{ border-left:0; }
+  @media(max-width:680px){ .expect .e{ border-left:0; padding-left:0; border-top:1px solid var(--line); padding-top:24px; } .expect .e:first-child{ border-top:0; padding-top:0; } }
+  .expect .e .n{ font-family:var(--mono); font-size:12px; color:var(--accent); letter-spacing:.12em; }
+  .expect .e h4{ font-family:var(--serif); font-size:20px; font-weight:500; margin:8px 0 6px; }
+  .expect .e p{ font-size:14.5px; color:var(--ink-2); margin:0; line-height:1.5; }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="Work With Me — Book">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a href="../about/index.html">About</a>
+      <a href="../research/index.html">Research</a>
+      <a href="../education-hub/index.html">Education Hub</a>
+      <a class="is-current" href="index.html">Work With Me</a>
+      <a href="../podcast/index.html">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#booker">Book a conversation</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">Home</a><span class="sep">/</span><a href="index.html">Work With Me</a><span class="sep">/</span><span>Book a discovery</span></p>
+    <p class="roman">Chapter IV · § iii</p>
+    <h1>Start with a<br><span class="it">conversation.</span></h1>
+    <p class="lede">Every transformation begins with a single, honest conversation. Whether you're grappling with persistent conflict, preparing for change, or simply sensing your culture could be something more — this is where we explore where you are, where you want to be, and whether we're the right fit.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+
+    <div class="expect">
+      <div class="e"><span class="n">Complimentary</span><h4>No cost, no obligation</h4><p>The discovery session is free. It exists to find the right fit — for both of us — before anything else.</p></div>
+      <div class="e"><span class="n">30–45 min</span><h4>A real conversation</h4><p>Not a sales pitch. We listen for the thread worth pulling, and tell you honestly if we're not the right people.</p></div>
+      <div class="e"><span class="n">Anywhere</span><h4>In person or virtual</h4><p>Adelaide in person, or video call across time zones. Whatever makes the honest conversation easiest.</p></div>
+    </div>
+
+    <div class="sec-head" id="booker" style="margin-top:72px;"><span class="rn">→</span><h2>Choose a time</h2></div>
+    <p class="client-banner">Scheduler is a static mock-up — to be wired to the client's live booking calendar (Calendly / Google) on build.</p>
+
+    <div class="booker">
+      <div class="pane cal">
+        <h2>Pick a date</h2>
+        <p class="sub">Available slots, Adelaide time (ACST).</p>
+        <div class="month">
+          <span class="m">June 2026</span>
+          <span class="nav">←&nbsp;&nbsp;→</span>
+        </div>
+        <div class="cal-grid">
+          <span class="dow">M</span><span class="dow">T</span><span class="dow">W</span><span class="dow">T</span><span class="dow">F</span><span class="dow">S</span><span class="dow">S</span>
+          <span class="day muted">26</span><span class="day muted">27</span><span class="day muted">28</span><span class="day muted">29</span><span class="day muted">30</span><span class="day muted">31</span><span class="day">1</span>
+          <span class="day">2</span><span class="day">3</span><span class="day avail">4</span><span class="day avail">5</span><span class="day">6</span><span class="day muted">7</span><span class="day">8</span>
+          <span class="day">9</span><span class="day avail">10</span><span class="day avail sel">11</span><span class="day avail">12</span><span class="day">13</span><span class="day muted">14</span><span class="day">15</span>
+          <span class="day avail">16</span><span class="day avail">17</span><span class="day avail">18</span><span class="day avail">19</span><span class="day">20</span><span class="day muted">21</span><span class="day">22</span>
+          <span class="day">23</span><span class="day avail">24</span><span class="day avail">25</span><span class="day avail">26</span><span class="day">27</span><span class="day muted">28</span><span class="day">29</span>
+          <span class="day">30</span><span class="day muted">1</span><span class="day muted">2</span><span class="day muted">3</span><span class="day muted">4</span><span class="day muted">5</span><span class="day muted">6</span>
+        </div>
+        <div class="slots">
+          <span class="slot">9:00 am</span>
+          <span class="slot sel">11:30 am</span>
+          <span class="slot">2:00 pm</span>
+          <span class="slot">4:30 pm</span>
+          <span class="slot">6:00 pm</span>
+        </div>
+        <p class="tz">Times shown in Adelaide, South Australia (ACST). Other time zones converted automatically on the live calendar.</p>
+      </div>
+
+      <div class="pane">
+        <h2>Tell us a little</h2>
+        <p class="sub">The more honest and open you are, the better we can tailor the conversation.</p>
+        <form onsubmit="return false;">
+          <div class="two">
+            <div class="field"><label>Your name</label><input type="text" placeholder="Full name"></div>
+            <div class="field"><label>Role</label><input type="text" placeholder="e.g. Head of People"></div>
+          </div>
+          <div class="two">
+            <div class="field"><label>Email</label><input type="email" placeholder="you@organisation.com"></div>
+            <div class="field"><label>Organisation</label><input type="text" placeholder="Organisation name"></div>
+          </div>
+          <div class="field">
+            <label>What's prompting this conversation?</label>
+            <select>
+              <option>Persistent conflict or miscommunication</option>
+              <option>Preparing for significant change</option>
+              <option>Culture &amp; psychosocial safety</option>
+              <option>Leadership &amp; ethical decision-making</option>
+              <option>Performance &amp; KPI alignment</option>
+              <option>Not sure yet — let's talk</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>In a sentence or two</label>
+            <textarea placeholder="What's actually happening, and what you'd hope to change."></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit" style="border-radius:0; width:100%; justify-content:center;">Request this slot <span class="arrow">→</span></button>
+          <p class="meta" style="margin-top:14px; text-align:center;">We respond to every enquiry within 24 hours.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark-section" style="text-align:center;">
+  <div class="wrap">
+    <span class="eyebrow">Prefer another way in?</span>
+    <p class="display" style="max-width:18ch; margin:18px auto 0;">Reach out however feels most natural.</p>
+    <div style="display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="../connect/index.html" style="border-radius:0;">Other ways to connect <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="services.html" style="color:var(--ink-on-dark); border-color:var(--line-dark); border-radius:0;">Review the services</a>
+    </div>
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="engagement.html">
+    <span class="lab">← Previous section</span>
+    <span class="ttl">ii · Engagement models</span>
+  </a>
+  <a class="next" href="../podcast/index.html">
+    <span class="lab">Next chapter →</span>
+    <span class="ttl">V · The Podcast</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="../about/index.html">About</a><a href="../research/index.html">Research</a><a href="../education-hub/index.html">Education Hub</a><a href="index.html">Work With Me</a><a href="../podcast/index.html">Podcast</a></div>
+      <div><h4>More</h4><a href="../voices/index.html">Testimonials</a><a href="../voices/index.html#students">Student feedback</a><a href="../connect/index.html#travel">Travel &amp; whereabouts</a><a href="../connect/faq.html">FAQ</a></div>
+      <div><h4>Connect</h4><a href="../connect/index.html">Contact</a><a href="book.html">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/theme.js"></script>
+</body>
+</html>

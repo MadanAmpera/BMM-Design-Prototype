@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var t=localStorage.getItem('bmm-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<title>Breaking Mental Models — Dr. Ankit Agarwal</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<style>
+  nav.site{ position:sticky; top:0; z-index:50; background:color-mix(in srgb,var(--paper-ink) 90%,transparent);
+    backdrop-filter:blur(10px); border-bottom:1px solid var(--line-dark); }
+  nav.site .wrap{ display:flex; align-items:center; justify-content:space-between; height:72px; gap:24px; }
+  .brand{ display:flex; align-items:center; gap:11px; text-decoration:none; color:var(--ink-on-dark); flex:none; }
+  .mark{ width:24px; height:24px; position:relative; flex:none; }
+  .mark i{ position:absolute; width:12px; height:12px; }
+  .mark i:nth-child(1){ left:0; top:0; background:var(--ink-on-dark); }
+  .mark i:nth-child(2){ right:0; top:2px; background:var(--accent); }
+  .mark i:nth-child(3){ left:2px; bottom:0; background:var(--ink-on-dark-2); }
+  .brand b{ font-family:var(--serif); font-weight:600; font-size:18px; letter-spacing:-.01em; }
+  .navlinks{ display:flex; gap:26px; margin-left:auto; white-space:nowrap; }
+  .navlinks a{ text-decoration:none; color:var(--ink-on-dark-2); font-size:15px; font-weight:500; transition:color .15s; }
+  .navlinks a:hover{ color:#D98A5E; }
+  @media(max-width:900px){ .navlinks{ display:none; } }
+
+  /* hero — dark, idea-first */
+  .hero{ background:var(--paper-ink); color:var(--ink-on-dark); padding-block:clamp(64px,11vw,150px) clamp(40px,6vw,80px);
+    position:relative; overflow:hidden; }
+  .hero .eyebrow{ color:#D98A5E; }
+  .hero .statement{ font-family:var(--serif); font-weight:500; font-size:clamp(40px,7.4vw,104px); line-height:1.0;
+    letter-spacing:-.03em; max-width:16ch; margin:26px 0 0; }
+  .hero .statement em{ color:#D98A5E; font-style:italic; }
+  .hero .sub{ display:flex; gap:24px; align-items:flex-start; margin-top:40px; flex-wrap:wrap; }
+  .hero .sub p{ color:var(--ink-on-dark-2); max-width:46ch; font-size:18px; margin:0; }
+  .hero-cta{ display:flex; gap:14px; margin-top:8px; flex-wrap:wrap; }
+
+  /* motif band */
+  .motif-band{ background:var(--paper-ink); padding-bottom:clamp(40px,6vw,80px); }
+  .motif-band .ph{ height:clamp(220px,32vw,420px); }
+
+  /* manifesto */
+  .manifesto{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; }
+  @media(max-width:780px){ .manifesto{ grid-template-columns:1fr; } }
+  .tenet{ padding:34px 30px; background:var(--paper-2); border-right:1px solid var(--line); }
+  .tenet:last-child{ border-right:0; }
+  @media(max-width:780px){ .tenet{ border-right:0; border-bottom:1px solid var(--line); } }
+  .tenet .n{ font-family:var(--mono); font-size:12px; color:var(--accent); letter-spacing:.1em; }
+  .tenet h3{ font-size:24px; margin:14px 0 10px; max-width:14ch; }
+  .tenet p{ font-size:14.5px; color:var(--ink-2); margin:0; }
+
+  /* person intro */
+  .person{ display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(28px,5vw,64px); align-items:center; }
+  @media(max-width:780px){ .person{ grid-template-columns:1fr; } }
+  .person .ph{ aspect-ratio:1/1; width:100%; }
+
+  .sec-head{ margin-bottom:34px; }
+  .sec-head h2{ max-width:20ch; margin-top:14px; }
+
+  /* paths list */
+  .paths{ border-top:1px solid var(--line-2); }
+  .path{ display:grid; grid-template-columns:auto 1fr auto auto; gap:28px; align-items:center; padding:26px 0;
+    border-bottom:1px solid var(--line-2); text-decoration:none; color:var(--ink); transition:padding .2s, background .15s; }
+  .path:hover{ background:var(--accent-tint); padding-inline:18px; }
+  .path .n{ font-family:var(--mono); font-size:13px; color:var(--ink-3); }
+  .path h3{ font-size:clamp(24px,3vw,34px); }
+  .path .desc{ color:var(--ink-2); font-size:15px; max-width:30ch; }
+  @media(max-width:680px){ .path{ grid-template-columns:auto 1fr; gap:8px 18px; } .path .desc{ grid-column:2; } .path .arrow{ display:none; } }
+  .path .arrow{ font-size:22px; color:var(--accent); }
+
+  /* podcast + cta reuse */
+  .pod{ display:grid; grid-template-columns:1fr 1fr; gap:0; background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; align-items:stretch; }
+  @media(max-width:780px){ .pod{ grid-template-columns:1fr; } }
+  .pod .ph{ min-height:300px; border-radius:0; }
+  .pod .body{ padding:clamp(28px,4vw,52px); display:flex; flex-direction:column; justify-content:center; }
+
+  .cta{ text-align:center; }
+  .cta .display{ max-width:18ch; margin:18px auto 0; }
+  .cta .display em{ color:#D98A5E; font-style:italic; }
+
+  footer.site{ background:var(--paper-ink); color:var(--ink-on-dark); padding-block:64px 40px; }
+  .foot-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px; }
+  @media(max-width:820px){ .foot-grid{ grid-template-columns:1fr 1fr; gap:36px 24px; } }
+  footer.site h4{ font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-on-dark-2); font-weight:500; margin-bottom:16px; }
+  footer.site a{ display:block; color:var(--ink-on-dark); text-decoration:none; font-size:14.5px; padding:5px 0; opacity:.85; }
+  footer.site a:hover{ opacity:1; color:#D98A5E; }
+  .foot-bottom{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-top:48px; padding-top:24px; border-top:1px solid var(--line-dark); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site" data-screen-label="Home D2">
+  <div class="wrap">
+    <a class="brand" href="#"><span class="mark"><i></i><i></i><i></i></span><b>Breaking Mental Models</b></a>
+    <div class="navlinks">
+      <a href="#">About</a><a href="#">Research</a><a href="#">Education Hub</a><a href="#">Work With Me</a><a href="#">Podcast</a>
+    </div>
+    <a class="btn btn-primary" href="#" style="padding:10px 18px;">Book a conversation</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">A different way to think about change</span>
+    <h1 class="statement">The environment is the <em>intervention.</em></h1>
+    <div class="sub">
+      <p>Most organisations try to change the person. I help you change the one thing you can actually control — the conditions around them — and let the transformation follow. Sustained long enough, it always does.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#">See how it works <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="#" style="color:var(--ink-on-dark); border-color:var(--line-dark);">Meet Dr. Agarwal</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MOTIF BAND -->
+<div class="motif-band">
+  <div class="wrap">
+    <div class="ph dark" data-label="Client image — ice → water transition"></div>
+  </div>
+</div>
+
+<!-- MANIFESTO -->
+<section class="section" style="padding-top:clamp(40px,6vw,72px);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Three convictions</span>
+      <h2 class="h2">The thinking behind everything here.</h2>
+    </div>
+    <div class="manifesto">
+      <div class="tenet">
+        <span class="n">01</span>
+        <h3>There's no such thing as a demotivated person.</h3>
+        <p>Motivation never disappears — it redirects. Stop trying to inject energy. Start asking what's draining it.</p>
+      </div>
+      <div class="tenet">
+        <span class="n">02</span>
+        <h3>Stop focusing on the 4. Focus on the 2s and the +.</h3>
+        <p>Outcomes are symptoms. Change the inputs and conditions, and the result changes — inevitably.</p>
+      </div>
+      <div class="tenet">
+        <span class="n">03</span>
+        <h3>Social safety first. Psychological safety follows.</h3>
+        <p>Build the environment you can control. Sustain it. The inner change develops on its own.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSON -->
+<section class="section" style="background:var(--paper-2); border-block:1px solid var(--line);">
+  <div class="wrap person">
+    <div class="ph" data-label="Portrait — Dr. Agarwal"></div>
+    <div>
+      <span class="eyebrow">Who's behind this</span>
+      <h2 class="h2" style="margin:14px 0 18px; max-width:18ch;">From a hostel in Adelaide to the world stage.</h2>
+      <p style="color:var(--ink-2); max-width:54ch;">I'm Dr. Ankit Agarwal. I applied for 350 jobs, cleaned hostel rooms for a bowl of rice, and crossed four countries before securing my first lecturing position at the University of Adelaide. Every challenge was a small success step. That lived experience is the lens I bring to research, teaching, and every organisation I work with.</p>
+      <div style="display:flex; gap:14px; margin-top:24px; flex-wrap:wrap;">
+        <a class="btn btn-dark" href="#">Read my story <span class="arrow">→</span></a>
+        <a class="link-arrow" href="#" style="align-self:center;">View full CV →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATHS -->
+<section class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Where to next</span>
+      <h2 class="h2">Choose your path.</h2>
+    </div>
+    <div class="paths">
+      <a class="path" href="#"><span class="n">01</span><h3>Education Hub</h3><span class="desc">Every OB theory through the life you already live.</span><span class="arrow">→</span></a>
+      <a class="path" href="#"><span class="n">02</span><h3>Work With Me</h3><span class="desc">Consulting, coaching &amp; training for organisations.</span><span class="arrow">→</span></a>
+      <a class="path" href="#"><span class="n">03</span><h3>The Podcast</h3><span class="desc">Honest conversations that break the model.</span><span class="arrow">→</span></a>
+      <a class="path" href="#"><span class="n">04</span><h3>Research</h3><span class="desc">Publications, media &amp; collaborations.</span><span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PODCAST -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="pod">
+      <div class="ph dark" data-label="Episode artwork"></div>
+      <div class="body">
+        <span class="eyebrow">Podcast · Episode 01 live</span>
+        <h2 class="h3" style="font-size:clamp(24px,3vw,32px); margin:14px 0 12px;">Memoirs to Millions × Breaking Mental Models</h2>
+        <p style="color:var(--ink-2); max-width:50ch;">Ice, water, and the environments that shape us. Twenty-two years of military structure meets a lifetime of crossing worlds — a conversation with Asher Wright.</p>
+        <div style="display:flex; gap:12px; margin-top:22px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="#">Listen now <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="#">Be a guest</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section dark-section cta">
+  <div class="wrap">
+    <span class="eyebrow">Ready when you are</span>
+    <p class="display">Be <em>honest</em> or don't bother.</p>
+    <p class="lead" style="max-width:44ch; margin:20px auto 0;">That's the whole brief. Whether you're a leader, a learner, or a future guest — let's have the conversation that matters.</p>
+    <div style="display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="#">Book a discovery session <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="#" style="color:var(--ink-on-dark); border-color:var(--line-dark);">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#"><span class="mark"><i></i><i></i><i></i></span><b>Breaking Mental Models</b></a>
+        <p style="color:var(--ink-on-dark-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="#">About</a><a href="#">Research</a><a href="#">Education Hub</a><a href="#">Work With Me</a><a href="#">Podcast</a></div>
+      <div><h4>More</h4><a href="#">Testimonials</a><a href="#">Student feedback</a><a href="#">Travel &amp; whereabouts</a><a href="#">FAQ</a></div>
+      <div><h4>Connect</h4><a href="#">Contact</a><a href="#">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom meta">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Say the thing · Have the conversation · Break the model</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/theme.js"></script>
+</body>
+</html>

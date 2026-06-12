@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var t=localStorage.getItem('bmm-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<title>Work With Me — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  /* Thesis statement — ice & water */
+  .thesis{ display:grid; grid-template-columns:1fr 1.05fr; gap:0; border:2px solid var(--ink); margin-top:48px; }
+  @media(max-width:860px){ .thesis{ grid-template-columns:1fr; } }
+  .thesis .ph{ min-height:380px; border:0; border-right:2px solid var(--ink); border-radius:0; }
+  @media(max-width:860px){ .thesis .ph{ border-right:0; border-bottom:2px solid var(--ink); min-height:280px; } }
+  .thesis .body{ padding:clamp(28px,4vw,56px); display:flex; flex-direction:column; justify-content:center; }
+  .thesis .body h2{ font-family:var(--serif); font-weight:500; font-size:clamp(28px,3.4vw,44px); line-height:1.08; letter-spacing:-.02em; margin:14px 0 18px; max-width:16ch; }
+  .thesis .body h2 em{ color:var(--accent); }
+  .thesis .body p{ font-family:var(--serif); font-size:18px; line-height:1.55; color:var(--ink-2); margin:0 0 1em; max-width:46ch; }
+
+  /* Two variables */
+  .vars{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line); border-top:0; }
+  @media(max-width:680px){ .vars{ grid-template-columns:1fr; } }
+  .var{ padding:30px clamp(22px,3vw,36px); border-left:1px solid var(--line); }
+  .var:first-child{ border-left:0; }
+  @media(max-width:680px){ .var{ border-left:0; border-top:1px solid var(--line); } }
+  .var .lab{ font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); }
+  .var h3{ font-family:var(--serif); font-size:26px; font-weight:500; margin:10px 0 8px; letter-spacing:-.01em; }
+  .var p{ font-size:15.5px; color:var(--ink-2); margin:0; }
+
+  /* Four domains */
+  .domains{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:48px; border:2px solid var(--ink); }
+  @media(max-width:980px){ .domains{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:540px){ .domains{ grid-template-columns:1fr; } }
+  .domain{ padding:32px 26px; border-left:1px solid var(--ink); display:flex; flex-direction:column; gap:12px; }
+  .domain:first-child{ border-left:0; }
+  @media(max-width:980px){ .domain:nth-child(3){ border-left:0; border-top:1px solid var(--ink); } .domain:nth-child(4){ border-top:1px solid var(--ink); } }
+  @media(max-width:540px){ .domain{ border-left:0; border-top:1px solid var(--ink); } .domain:first-child{ border-top:0; } }
+  .domain .rn{ font-family:var(--mono); font-size:13px; letter-spacing:.18em; color:var(--accent); }
+  .domain h3{ font-family:var(--serif); font-size:24px; font-weight:500; line-height:1.1; letter-spacing:-.01em; }
+  .domain p{ font-family:var(--serif); font-size:16px; line-height:1.5; color:var(--ink-2); margin:0; flex:1; }
+  .domain .ct{ font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-top:auto; padding-top:14px; border-top:1px dashed var(--line-2); }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="Work With Me — landing">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a href="../about/index.html">About</a>
+      <a href="../research/index.html">Research</a>
+      <a href="../education-hub/index.html">Education Hub</a>
+      <a class="is-current" href="index.html">Work With Me</a>
+      <a href="../podcast/index.html">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="book.html">Book a conversation</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">Home</a><span class="sep">/</span><span>Work With Me</span></p>
+    <p class="roman">Chapter IV · For organisations</p>
+    <h1>Change the<br>environment. The<br><span class="it">rest follows.</span></h1>
+    <p class="lede">Real change doesn't happen in a workshop. It happens when the environment around your people becomes genuinely conducive to it — and stays that way long enough to take hold.</p>
+    <div class="meta-row">
+      <div><span class="lab">Foundation</span><span class="val">Psychosocial safety</span></div>
+      <div><span class="lab">Approach</span><span class="val">Environment-led</span></div>
+      <div><span class="lab">Not</span><span class="val">A one-day fix</span></div>
+      <div><span class="lab">Format</span><span class="val">In person · virtual</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+
+    <div class="sec-head"><span class="rn">a</span><h2>The environment is the intervention</h2></div>
+    <p class="lead" style="max-width:62ch;">Most organisations try to change the outcome — the disengagement, the conflict, the missed targets. We work on the two things you can actually control: the conditions your people stand in, and how long they stand in them.</p>
+
+    <div class="thesis">
+      <div class="ph" data-label="Client image — ice → water"></div>
+      <div class="body">
+        <span class="eyebrow">The core conviction</span>
+        <h2>Neither the water nor the ice <em>chose</em> to change.</h2>
+        <p>They responded to the environment they were placed in — and stayed in it long enough. Your people are no different. They are not resistant to change; they are responding to the environment they are currently in.</p>
+        <p style="font-family:var(--serif); font-style:italic; color:var(--ink); font-size:20px;">Change the environment. Sustain it. The transformation follows.</p>
+      </div>
+    </div>
+
+    <div class="vars">
+      <div class="var">
+        <span class="lab">Variable 01</span>
+        <h3>The right environment</h3>
+        <p>Conducive conditions for the change you actually want — structures, norms, and leadership behaviours that make honesty safe.</p>
+      </div>
+      <div class="var">
+        <span class="lab">Variable 02</span>
+        <h3>The right duration</h3>
+        <p>Held long enough for the new pattern to become the normal one. We mistake early difficulty for failure; time, in the right conditions, is not the enemy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head"><span class="rn">b</span><h2>What we bring to your organisation</h2></div>
+    <p class="lead" style="max-width:62ch;">Four interconnected domains — each designed not to deliver a programme, but to shift the conditions inside your organisation, so new behaviours become natural, necessary, and sustained.</p>
+
+    <div class="domains">
+      <div class="domain">
+        <span class="rn">i</span>
+        <h3>Consulting</h3>
+        <p>Surfacing the hidden conflicts, miscommunications and structural tensions no one is naming but everyone is feeling.</p>
+        <span class="ct">1–2 days + follow-up</span>
+      </div>
+      <div class="domain">
+        <span class="rn">ii</span>
+        <h3>Training</h3>
+        <p>Not a course — a capability-building process for agile thinking and decision-making under real complexity.</p>
+        <span class="ct">1 day + workshops</span>
+      </div>
+      <div class="domain">
+        <span class="rn">iii</span>
+        <h3>Coaching</h3>
+        <p>Guiding leaders through the ethical grey zones, where the quality of the decision depends on the quality of the thinking.</p>
+        <span class="ct">3–5 sessions / month</span>
+      </div>
+      <div class="domain">
+        <span class="rn">iv</span>
+        <h3>Assessment</h3>
+        <p>Checking whether your KPIs measure what matters — or quietly drive the behaviours you are trying to change.</p>
+        <span class="ct">1 week + feedback</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head"><span class="rn">c</span><h2>In this chapter</h2></div>
+
+    <div class="idx-head"><span class="t">Sections</span><span class="t" style="color:var(--ink-3);">03</span></div>
+
+    <a class="idx-row" href="services.html">
+      <span class="rn">i</span>
+      <span><h3>Services &amp; solutions</h3><p class="desc">The full suite — consulting, training, coaching and assessment, plus the four organisational-development solutions. With a services-at-a-glance table and indicative timelines.</p></span>
+      <span class="pg"><span class="count">08</span><span class="unit">services</span></span>
+    </a>
+    <a class="idx-row" href="engagement.html">
+      <span class="rn">ii</span>
+      <span><h3>Engagement models</h3><p class="desc">Single session, programme package, or ongoing partnership — and exactly who each one is built for. Every engagement begins with a complimentary discovery conversation.</p></span>
+      <span class="pg"><span class="count">03</span><span class="unit">models</span></span>
+    </a>
+    <a class="idx-row" href="book.html">
+      <span class="rn">iii</span>
+      <span><h3>Book a discovery session</h3><p class="desc">A single, honest conversation about where your organisation is, where you want it to be, and whether we're the right fit. Complimentary, no obligation.</p></span>
+      <span class="pg"><span class="count">→</span><span class="unit">free</span></span>
+    </a>
+  </div>
+</section>
+
+<section class="section dark-section" style="text-align:center;">
+  <div class="wrap">
+    <span class="eyebrow">A note on fit</span>
+    <p class="display" style="max-width:20ch; margin:18px auto 0;">If you want a one-day fix, we are not the right people.</p>
+    <p class="lead" style="max-width:48ch; margin:20px auto 0;">If you are ready to invest in lasting change — built on psychosocial safety and held long enough to work — we are exactly what you need.</p>
+    <div style="display:flex; gap:14px; justify-content:center; margin-top:32px; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="book.html" style="border-radius:0;">Book a discovery session <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="services.html" style="color:var(--ink-on-dark); border-color:var(--line-dark); border-radius:0;">See all services</a>
+    </div>
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="../education-hub/index.html">
+    <span class="lab">← Previous chapter</span>
+    <span class="ttl">III · Education Hub</span>
+  </a>
+  <a class="next" href="../podcast/index.html">
+    <span class="lab">Next chapter →</span>
+    <span class="ttl">V · The Podcast</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="../about/index.html">About</a><a href="../research/index.html">Research</a><a href="../education-hub/index.html">Education Hub</a><a href="index.html">Work With Me</a><a href="../podcast/index.html">Podcast</a></div>
+      <div><h4>More</h4><a href="../voices/index.html">Testimonials</a><a href="../voices/index.html#students">Student feedback</a><a href="../connect/index.html#travel">Travel &amp; whereabouts</a><a href="../connect/faq.html">FAQ</a></div>
+      <div><h4>Connect</h4><a href="../connect/index.html">Contact</a><a href="book.html">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/theme.js"></script>
+</body>
+</html>

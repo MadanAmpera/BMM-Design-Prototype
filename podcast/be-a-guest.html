@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>(function(){try{var t=localStorage.getItem('bmm-theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();</script>
+<title>Be a Guest — Breaking Mental Models</title>
+<link rel="stylesheet" href="../assets/bmm.css">
+<link rel="stylesheet" href="../assets/bmm-site.css">
+<style>
+  .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:2px solid var(--ink); margin-top:8px; }
+  @media(max-width:760px){ .steps{ grid-template-columns:1fr; } }
+  .step{ padding:34px 30px; border-left:1px solid var(--ink); }
+  .step:first-child{ border-left:0; }
+  @media(max-width:760px){ .step{ border-left:0; border-top:1px solid var(--ink); } .step:first-child{ border-top:0; } }
+  .step .n{ font-family:var(--serif); font-size:48px; font-weight:500; color:var(--accent); line-height:1; letter-spacing:-.02em; }
+  .step h3{ font-family:var(--serif); font-size:24px; font-weight:500; margin:14px 0 10px; letter-spacing:-.01em; }
+  .step p{ font-size:15.5px; color:var(--ink-2); margin:0; line-height:1.55; }
+
+  .elephants{ display:grid; grid-template-columns:1fr 1fr; gap:0; border-top:1px solid var(--line); border-left:1px solid var(--line); margin-top:8px; }
+  @media(max-width:680px){ .elephants{ grid-template-columns:1fr; } }
+  .ele{ padding:26px 30px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .ele .n{ font-family:var(--mono); font-size:13px; color:var(--accent); letter-spacing:.1em; }
+  .ele h4{ font-family:var(--serif); font-size:21px; font-weight:500; margin:6px 0 6px; letter-spacing:-.01em; }
+  .ele p{ font-size:15px; color:var(--ink-2); margin:0; line-height:1.5; }
+
+  .field{ margin-bottom:18px; }
+  .field label{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); margin-bottom:7px; }
+  .field input, .field textarea{ width:100%; font-family:var(--sans); font-size:15px; color:var(--ink); background:var(--paper-2); border:1px solid var(--line-2); border-radius:var(--radius); padding:12px 14px; transition:.12s; }
+  .field input:focus, .field textarea:focus{ outline:none; border-color:var(--accent); background:#fff; }
+  .field textarea{ min-height:120px; resize:vertical; }
+  .two{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media(max-width:480px){ .two{ grid-template-columns:1fr; } }
+  .pitch{ max-width:640px; }
+</style>
+</head>
+<body>
+
+<nav class="site" data-screen-label="Podcast — Be a guest">
+  <div class="wrap">
+    <a class="brand" href="../index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+    <div class="navlinks">
+      <a href="../about/index.html">About</a>
+      <a href="../research/index.html">Research</a>
+      <a href="../education-hub/index.html">Education Hub</a>
+      <a href="../work-with-me/index.html">Work With Me</a>
+      <a class="is-current" href="index.html">Podcast</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#pitch">Be a guest</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">Home</a><span class="sep">/</span><a href="index.html">Podcast</a><span class="sep">/</span><span>Be a guest</span></p>
+    <p class="roman">Chapter V · § ii</p>
+    <h1>The seat is<br>open. Come<br><span class="it">sit in it.</span></h1>
+    <p class="lede">No requirement for a blue tick or a bestselling book. The only qualification is that you've lived something, learned something, or questioned something — and you're willing to say it out loud without the safety net of a rehearsed answer.</p>
+  </div>
+</header>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head"><span class="rn">a</span><h2>How it works</h2></div>
+
+    <div class="steps">
+      <div class="step">
+        <span class="n">01</span>
+        <h3>Reach out</h3>
+        <p>Drop a message sharing what's on your mind. No formal pitch required — just tell us what you'd want to talk about and why it matters to you right now.</p>
+      </div>
+      <div class="step">
+        <span class="n">02</span>
+        <h3>Pre-chat</h3>
+        <p>A brief, informal conversation to get a feel for the territory. No prep needed — in fact, the less polished, the better.</p>
+      </div>
+      <div class="step">
+        <span class="n">03</span>
+        <h3>Show up &amp; talk</h3>
+        <p>We record. No rigid agenda — three loose anchors and a real conversation. You don't need all the answers; you just need to be willing to be honest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head"><span class="rn">b</span><h2>The elephant list</h2></div>
+    <p class="lead" style="max-width:62ch;">The conversations this show was built for — the ones that keep getting postponed, politely sidestepped, or dressed up in language that softens the edges too much. A starting point, not a limit.</p>
+
+    <div class="elephants">
+      <div class="ele"><span class="n">01</span><h4>Parenting &amp; pressure</h4><p>Are we raising children or managing our own anxiety? What we never say about how hard it actually is.</p></div>
+      <div class="ele"><span class="n">02</span><h4>Success &amp; emptiness</h4><p>You did everything right — the job, the house, the title. So why does something still feel hollow?</p></div>
+      <div class="ele"><span class="n">03</span><h4>Belonging vs assimilation</h4><p>How much of yourself do you quietly edit to fit in — and what does that cost you over time?</p></div>
+      <div class="ele"><span class="n">04</span><h4>Grief that has no name</h4><p>The losses with no funeral. A version of yourself. A future you'd planned. A relationship that ended without closure.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head" id="pitch"><span class="rn">c</span><h2>Pitch your conversation</h2></div>
+    <p class="client-banner">Form is a static mock-up — to be connected to the client's inbox / booking system on build.</p>
+    <div class="pitch">
+      <form onsubmit="return false;">
+        <div class="two">
+          <div class="field"><label>Your name</label><input type="text" placeholder="Full name"></div>
+          <div class="field"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+        </div>
+        <div class="field"><label>What's bothering you?</label><textarea placeholder="The question you can't stop circling, the belief you're not sure you believe anymore — whatever you'd want to sit with on record."></textarea></div>
+        <button class="btn btn-primary" type="submit" style="border-radius:0;">Send my pitch <span class="arrow">→</span></button>
+        <p class="meta" style="margin-top:14px;">The less polished, the better. We read every message.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section dark-section" style="text-align:center;">
+  <div class="wrap">
+    <span class="eyebrow">The one rule</span>
+    <p class="display" style="margin:18px auto 0; max-width:16ch;">Be honest or <span style="color:#D98A5E; font-style:italic;">don't bother.</span></p>
+    <p class="lead" style="max-width:48ch; margin:20px auto 0;">This podcast is not inclusive — it's exclusive to all. Everyone's welcome, but comfort zones are not.</p>
+  </div>
+</section>
+
+<nav class="chapter-nav" aria-label="Chapter navigation">
+  <a href="episodes.html">
+    <span class="lab">← Previous section</span>
+    <span class="ttl">i · Episode library</span>
+  </a>
+  <a class="next" href="philosophy.html">
+    <span class="lab">Next section →</span>
+    <span class="ttl">iii · The philosophy</span>
+  </a>
+</nav>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <a class="brand" href="../index.html"><span class="mark"><i></i><i></i><i></i></span><b>B / M / M</b></a>
+        <p style="color:var(--ink-2); font-size:14.5px; margin-top:16px; max-width:34ch;">Dr. Ankit Agarwal — educator, researcher, and lifelong learner. Adelaide, South Australia.</p>
+      </div>
+      <div><h4>Explore</h4><a href="../about/index.html">About</a><a href="../research/index.html">Research</a><a href="../education-hub/index.html">Education Hub</a><a href="../work-with-me/index.html">Work With Me</a><a href="index.html">Podcast</a></div>
+      <div><h4>More</h4><a href="../voices/index.html">Testimonials</a><a href="../voices/index.html#students">Student feedback</a><a href="../connect/index.html#travel">Travel &amp; whereabouts</a><a href="../connect/faq.html">FAQ</a></div>
+      <div><h4>Connect</h4><a href="../connect/index.html">Contact</a><a href="../work-with-me/book.html">Book appointment</a><a href="#">YouTube</a><a href="#">LinkedIn</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Breaking Mental Models</span>
+      <span>Set in Newsreader &amp; IBM Plex</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/theme.js"></script>
+</body>
+</html>
